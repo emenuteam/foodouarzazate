@@ -9,11 +9,15 @@ function updateBasket() {
         const li = document.createElement('li');
         li.classList.add('basket-item');
         li.innerHTML = `
-            <span>${item.name} - ${item.price}dh</span>
-            <div>
-                <button onclick="decreaseQuantity(${index})">-</button>
-                <input type="text" value="${item.quantity}" readonly>
-                <button onclick="increaseQuantity(${index})">+</button>
+            <div class="row">
+            <div class="col">${item.name} - ${item.price}dh</div>
+            <div class="col">
+                <div class="input-group">
+                <button class="btn btn-outline-secondary" onclick="decreaseQuantity(${index})">-</button>
+                <input type="text" class="form-control" value="${item.quantity}" readonly>
+                <button class="btn btn-outline-secondary" onclick="increaseQuantity(${index})">+</button>
+                </div>
+            </div>
             </div>
         `;
         basketList.appendChild(li);
