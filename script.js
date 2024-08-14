@@ -4,23 +4,49 @@ const meals = ["salade-nicoise-au-thon.jpeg", "92e4599e84a5ee6f19a210b3b7e291a4.
 
 const mealSection = document.getElementById('meal-section');
 let basket = JSON.parse(localStorage.getItem('basket')) || [];
-
-meals.forEach(meal => {
-    const mealDiv = document.createElement('div');
-    mealDiv.classList.add('meal');
-    mealDiv.innerHTML = `
-        <img src="./images/${meal}" alt="shawarma" class="">
-        <div class="">
-            <h3 class="card-title">shawarma</h3>
-            <p class="card-text">100 dh</p>
-            <button onclick="addToBasket('shawarma', 100)" class="btn btn-primary">Add to Basket</button>
-        </div>
-    `;
-    mealSection.appendChild(mealDiv);
-});
+fetch('https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood') //
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+        data.meals.forEach(meal => {
+            const mealDiv = document.createElement('div');
+            mealDiv.classList.add('meal','d-flex','flex-column','justify-content-between','align-items-center');
+            mealDiv.innerHTML = `
+            <div class="">
+            <img src="${meal.strMealThumb}" alt="${meal.strMeal}" class="">
+            </div>
+                <div class="">
+                    <h4 class="card-title">${meal.strMeal}</h4>
+                    <p class="card-text">${Math.floor(Math.random() * 450) + 50} dh</p>
+                    <div class="btn-group">
+                    <button onclick="addToBasket('${meal.strMeal}', ${Math.floor(Math.random() * 450) + 50})" class="btn btn-warning"><i class="fas fa-shopping-cart"></i></button>
+                        <button type="button" class="btn btn-secondary">$${Math.floor(Math.random() * 450) + 50}</button>
+                    </div>
+                </div>
+            `;
+            mealSection.appendChild(mealDiv);
+        }
+        );
+    }
+    ).catch(error => console.log(error));
+// meals.forEach(meal => {
+//     const mealDiv = document.createElement('div');
+//     mealDiv.classList.add('meal');
+//     mealDiv.innerHTML = `
+//         <img src="./images/${meal}" alt="shawarma" class="">
+//         <div class="">
+//             <h3 class="card-title">shawarma</h3>
+//             <p class="card-text">100 dh</p>
+//             <button onclick="addToBasket('shawarma', 100)" class="btn btn-primary">Add to Basket</button>
+//         </div>
+//     `;
+//     mealSection.appendChild(mealDiv);
+// });
 
 function addToBasket(name, price) {
     const existingItem = basket.find(item => item.name === name);
+    console.log(existingItem);
+
     if (existingItem) {
         existingItem.quantity++;
     } else {
@@ -43,7 +69,7 @@ function addToBasket(name, price) {
 }
 
 document.getElementById('basket-button').addEventListener('click', (e) => {
-    
+
     window.location.href = 'basket.html';
 });
 
@@ -54,3 +80,8 @@ document.getElementById('checkout-button').addEventListener('click', (e) => {
     localStorage.removeItem('basket');
     window.location.href = 'checkout.html';
 });
+
+
+// fetch this https://www.themealdb.com/api/json/v1/1/search.php?f=a get idMeal, strMeal, strCategory, strMealThumb add price to each meal and it takes random price between 50 and 500
+
+let mealls = [];

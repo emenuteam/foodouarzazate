@@ -56,6 +56,8 @@ document.getElementById('checkout-button').addEventListener('click', () => {
     localStorage.removeItem('basket');
     basket.length = 0; // Clear basket
     updateBasket();
+    // return home
+    window.location.href = 'index.html';
 });
 
 updateBasket();
