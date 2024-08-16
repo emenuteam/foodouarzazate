@@ -643,7 +643,7 @@ const foods = [
         "category": "Chicken"
     },
     {
-        "strMeal": "Shawarma",
+        "strMeal": "shawarma",
         "strMealThumb": "https://www.themealdb.com/images/media/meals/kcv6hj1598733479.jpg",
         "idMeal": "53028",
         "category": "Chicken"
@@ -1058,6 +1058,69 @@ const foods = [
     }
 ];
 
+const menu = [
+    { name: "Shawarma Normal", price: "25dh", category: "shawarma", image: "1.jpg" },
+    { name: "Shawarma Fromage", price: "30dh", category: "shawarma", image: "2.jpg" },
+    { name: "Tacos Shawarma", price: "35dh", category: "shawarma", image: "3.jpg" },
+    { name: "Shawarma XL", price: "60dh", category: "shawarma", image: "4.jpg" },
+    { name: "Plat Shawarma", price: "35dh", category: "shawarma", image: "5.jpg" },
+    { name: "Salad Shawarma", price: "35dh", category: "shawarma", image: "6.jpg" },
+    { name: "Shawarma Special", price: "45dh", category: "shawarma", image: "7.jpg" },
+    { name: "0.5Kg Shawarma", price: "80dh", category: "shawarma", image: "8.jpg" },
+    { name: "1kg Shawarma", price: "160dh", category: "shawarma", image: "9.jpg" },
+
+    { name: "Tacos Cordon Bleu", price: "35dh", category: "tacos", image: "1.jpg" },
+    { name: "Tacos Viande Hachée", price: "35dh", category: "tacos", image: "2.jpg" },
+    { name: "Tacos Saussice", price: "30dh", category: "tacos", image: "3.jpg" },
+    { name: "Tacos Gratiné", price: "50dh", category: "tacos", image: "4.jpg" },
+    { name: "Tacos Special", price: "40dh", category: "tacos", image: "5.png" },
+    { name: "Tacos Nuggets", price: "30dh", category: "tacos", image: "6.png" },
+    { name: "Tacos Mix", price: "35dh", category: "tacos", image: "7.png" },
+    { name: "Tacos Dinde", price: "30dh", category: "tacos", image: "8.jpg" },
+
+    { name: "Tacos Dinde XL", category: "tacos_xl", image: "1.jpg" },
+    { name: "Tacos Viande Hachée XL", category: "tacos_xl", image: "2.jpg" },
+    { name: "Tacos Mix XL", category: "tacos_xl", image: "3.jpeg" },
+    { name: "Tacos Nuggets XL", category: "tacos_xl", image: "4.png" },
+    { name: "Tacos Cordon Bleu XL", category: "tacos_xl", image: "5.jpg" },
+    { name: "Tacos Special XL", category: "tacos_xl", image: "6.jpg" },
+    { name: "Tacos Sauccice XL", category: "tacos_xl", image: "7.jpg" },
+
+    { name: "Burrito Dinde", price: "20dh", category: "burrito", image: "1.jpg" },
+    { name: "Burrito Mix", price: "25dh", category: "burrito", image: "2.jpg" },
+    { name: "Burrito Viande Hachée", price: "25dh", category: "burrito", image: "3.jpg" },
+    { name: "Burrito Nuggets", price: "20dh", category: "burrito", image: "4.jpeg" },
+    { name: "Burrito Cordon Bleu", price: "25dh", category: "burrito", image: "5.jpg" },
+    { name: "Burrito Special", price: "25dh", category: "burrito", image: "6.jpg" },
+    { name: "Burrito Saussice", price: "20dh", category: "burrito", image: "7.webp" },
+
+    { name: "Burrito Viande Hachée XL", price: "40dh", category: "burrito_xl", image: "1.jpg" },
+    { name: "Burrito Dinde XL", price: "35dh", category: "burrito_xl", image: "2.jpg" },
+    { name: "Burrito Mix XL", price: "50dh", category: "burrito_xl", image: "3.webp" },
+    { name: "Burrito Nuggets XL", price: "35dh", category: "burrito_xl", image: "4.jpg" },
+    { name: "Burrito Saussice XL", price: "35dh", category: "burrito_xl", image: "5.webp" },
+    { name: "Burrito Cordon Bleu XL", price: "35dh", category: "burrito_xl", image: "6.jpeg" },
+    { name: "Burrito Special XL", price: "60dh", category: "burrito_xl", image: "7.png" },
+
+    { name: "Cheese Burger", price: "35dh", category: "burger", image: "1.jpeg" },
+    { name: "Double Burger", price: "60dh", category: "burger", image: "2.jpg" },
+    { name: "Chicken Burger", price: "35dh", category: "burger", image: "3.jpg" },
+    { name: "Double Chicken Burger", price: "60dh", category: "burger", image: "4.webp" },
+    { name: "Burger Cordon Bleu", price: "35dh", category: "burger", image: "5.jpeg" },
+    { name: "Double Cordon Burger", price: "60dh", category: "burger", image: "6.jpeg" },
+
+    { name: "Nuggets Pack 6", price: "30dh", category: "nugget", image: "1.jpeg" },
+    { name: "Nuggets Pack 9", price: "40dh", category: "nugget", image: "2.jpg" },
+    { name: "Nuggets Pack 12", price: "60dh", category: "nugget", image: "3.jpg" },
+
+    { name: "Pepsi", price: "5dh", category: "boisson", image: "1.jpg" },
+    { name: "7up", price: "5dh", category: "boisson", image: "2.webp" },
+    { name: "Tropical", price: "6dh", category: "boisson", image: "3.webp" },
+    { name: "Orange", price: "5dh", category: "boisson", image: "4.webp" },
+    { name: "Citron", price: "5dh", category: "boisson", image: "5.webp" },
+    { name: "Aquafina", price: "5dh", category: "boisson", image: "6.jpeg" },
+];
+
 // get the menu section
 const mealSection = document.getElementById('meal-section');
 
@@ -1067,13 +1130,17 @@ $(() => {
         $('.filters_menu li').removeClass('active');
         $(this).addClass('active');
 
-        const category = $(this).text();
-        if (category == "All") {
+        const category = $(this).data('category');
+        console.log(category);
+        
+        if (category == "All" || category == undefined) {
             showMenuItems();
             return;
         }
+
+        const categoryFood = menu.filter(food => food.category === category);
+        console.log(categoryFood);
         
-        const categoryFood = foods.filter(food => food.category === category);
         // empty the menu
         $(mealSection).empty();
         // append the new menu
@@ -1085,19 +1152,33 @@ $(() => {
     });
 });
 
+/* -------------------- for formatting the category names ------------------- */
+function capitalizeAndUppercaseSecond(word) {
+    let words = word.split('_');
+    words = words.map((w, index) => {
+        if (index === 1) {
+            return w.toUpperCase();
+        }
+        return w.charAt(0).toUpperCase() + w.slice(1).toLowerCase();
+    });
+    return words.join(' ');
+}
+
+
 const createNewMenuItem = (meal) => {
     const mealDiv = document.createElement('div');
     mealDiv.classList.add('meal', 'd-flex', 'flex-column', 'justify-content-between', 'align-items-center', 'gap-2', 'col-12', 'col-md-6', 'col-lg-4', 'col-xl-3');
+    let image_path =  './images/' + meal.category.split('_').join('').toUpperCase() + '/' + meal.image;
     mealDiv.innerHTML = `
                 <div class="">
-                    <img src="${meal.strMealThumb}" alt="${meal.strMeal}" class="">
+                    <img src="${image_path}" alt="${meal.name}" class="">
                 </div>
                 <div class="">
-                    <h4 class="card-title">${meal.strMeal}</h4>
+                    <h4 class="card-title">${meal.name}</h4>
                 </div>
-                <div class="btn-group" onclick="addToBasket('${meal.strMeal}', ${Math.floor(Math.random() * 450) + 50}, '${meal.strMealThumb}')">
+                <div class="btn-group" onclick="addToBasket('${meal.name}', ${meal.price}, '${image_path}')">
                     <button class="btn btn-warning"><i class="fas fa-shopping-cart"></i></button>
-                    <button type="button" class="btn btn-secondary">${Math.floor(Math.random() * 450) + 50} DH</button>
+                    <button type="button" class="btn btn-secondary">${meal.price} DH</button>
                 </div>
             `;
     mealSection.appendChild(mealDiv);
@@ -1108,20 +1189,20 @@ let basket = JSON.parse(localStorage.getItem('basket')) || [];
 // Beef, Chicken, Dessert, Lamb, Pasta, Pork, Seafood, Side, Starter, Vegan, Vegetarian
 
 // append categories
-const categories = foods.map(meal => meal.category);
+const categories = menu.map(meal => meal.category)
 const uniqueCategories = [...new Set(categories)];
 
 uniqueCategories.forEach(category => {
 
     const li = document.createElement('li');
-    li.textContent = category;
-    li.setAttribute('data-filter', `.${category}`);
+    li.textContent = capitalizeAndUppercaseSecond(category);
+    li.setAttribute('data-category', category);
     document.getElementById('filters_menu').appendChild(li);
 });
 
 // append meals
 const showMenuItems = () => {
-    foods.forEach(meal => {
+    menu.forEach(meal => {
         createNewMenuItem(meal);
     });
 };
@@ -1172,67 +1253,5 @@ document.getElementById('checkout-button').addEventListener('click', (e) => {
     window.location.href = 'checkout.html';
 });
 
-const menu = [
-    { name: "Shawarma Normal", price: "25dh", category: "Shawarma" },
-    { name: "Shawarma Fromage", price: "30dh", category: "Shawarma" },
-    { name: "Tacos Shawarma", price: "35dh", category: "Shawarma" },
-    { name: "Shawarma XL", price: "60dh", category: "Shawarma" },
-    { name: "Plat Shawarma", price: "35dh", category: "Shawarma" },
-    { name: "Salad Shawarma", price: "35dh", category: "Shawarma" },
-    { name: "Shawarma Special", price: "45dh", category: "Shawarma" },
-    { name: "0.5Kg Shawarma", price: "80dh", category: "Shawarma" },
-    { name: "1kg Shawarma", price: "160dh", category: "Shawarma" },
-
-    { name: "Tacos Cordon Bleu", price: "35dh", category: "Tacos" },
-    { name: "Tacos Viande Hachée", price: "35dh", category: "Tacos" },
-    { name: "Tacos Saussice", price: "30dh", category: "Tacos" },
-    { name: "Tacos Gratiné", price: "50dh", category: "Tacos" },
-    { name: "Tacos Special", price: "40dh", category: "Tacos" },
-    { name: "Tacos Nuggets", price: "30dh", category: "Tacos" },
-    { name: "Tacos Mix", price: "35dh", category: "Tacos" },
-    { name: "Tacos Dinde", price: "30dh", category: "Tacos" },
-
-    { name: "Tacos Dinde XL", category: "Tacos XL" },
-    { name: "Tacos Viande Hachée XL", category: "Tacos XL" },
-    { name: "Tacos Mix XL", category: "Tacos XL" },
-    { name: "Tacos Nuggets XL", category: "Tacos XL" },
-    { name: "Tacos Cordon Bleu XL", category: "Tacos XL" },
-    { name: "Tacos Special XL", category: "Tacos XL" },
-    { name: "Tacos Sauccice XL", category: "Tacos XL" },
-
-    { name: "Burrito Dinde", price: "20dh", category: "Burrito" },
-    { name: "Burrito Mix", price: "25dh", category: "Burrito" },
-    { name: "Burrito Viande Hachée", price: "25dh", category: "Burrito" },
-    { name: "Burrito Nuggets", price: "20dh", category: "Burrito" },
-    { name: "Burrito Cordon Bleu", price: "25dh", category: "Burrito" },
-    { name: "Burrito Special", price: "25dh", category: "Burrito" },
-    { name: "Burrito Saussice", price: "20dh", category: "Burrito" },
-
-    { name: "Burrito Viande Hachée XL", price: "40dh", category: "Burrito XL" },
-    { name: "Burrito Dinde XL", price: "35dh", category: "Burrito XL" },
-    { name: "Burrito Mix XL", price: "50dh", category: "Burrito XL" },
-    { name: "Burrito Nuggets XL", price: "35dh", category: "Burrito XL" },
-    { name: "Burrito Saussice XL", price: "35dh", category: "Burrito XL" },
-    { name: "Burrito Cordon Bleu XL", price: "35dh", category: "Burrito XL" },
-    { name: "Burrito Special XL", price: "60dh", category: "Burrito XL" },
-
-    { name: "Cheese Burger", price: "35dh", category: "Burger" },
-    { name: "Double Burger", price: "60dh", category: "Burger" },
-    { name: "Chicken Burger", price: "35dh", category: "Burger" },
-    { name: "Double Chicken Burger", price: "60dh", category: "Burger" },
-    { name: "Burger Cordon Bleu", price: "35dh", category: "Burger" },
-    { name: "Double Cordon Burger", price: "60dh", category: "Burger" },
-
-    { name: "Nuggets Pack 6", price: "30dh", category: "Nugget" },
-    { name: "Nuggets Pack 9", price: "40dh", category: "Nugget" },
-    { name: "Nuggets Pack 12", price: "60dh", category: "Nugget" },
-
-    { name: "Pepsi", price: "5dh", category: "Boisson" },
-    { name: "7up", price: "5dh", category: "Boisson" },
-    { name: "Tropical", price: "6dh", category: "Boisson" },
-    { name: "Orange", price: "5dh", category: "Boisson" },
-    { name: "Citron", price: "5dh", category: "Boisson" },
-    { name: "Aquafina", price: "5dh", category: "Boisson" },
-];
 
 
