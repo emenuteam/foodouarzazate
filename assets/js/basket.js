@@ -9,18 +9,23 @@ function updateBasket() {
         const li = document.createElement('li');
         li.classList.add('basket-item');
         li.innerHTML = `
-            <div class="row">
-            <div class="col">
-                <img src="${item.image}" alt="${item.name}" class="basket-item-image">
-                <span>${item.name} - ${item.price}dh</span>
-            </div>
-            <div class="col">
-                <div class="input-group">
-                <button class="btn btn-outline-secondary" onclick="decreaseQuantity(${index})">-</button>
-                <input type="text" class="form-control" value="${item.quantity}" readonly>
-                <button class="btn btn-outline-secondary" onclick="increaseQuantity(${index})">+</button>
+            <div class="d-flex justify-content-between gap-2 py-3 border-bottom">
+                <div class="">
+                    <div class="d-flex align-items-center">
+                        <img src="${item.image}" alt="${item.name}" class="rounded-circle" style="width: 50px; height: 50px;">
+                        <div class="ms-3">
+                            <span class="d-block">${item.name}</span>
+                            <span class="d-block fw-bold">${item.price}dh</span>
+                        </div>
+                    </div>
                 </div>
-            </div>
+                <div class="">
+                    <div class="input-group">
+                        <button class="btn btn-outline-secondary" onclick="decreaseQuantity(${index})">-</button>
+                        <input type="text" class="form-control" value="${item.quantity}" readonly>
+                        <button class="btn btn-outline-secondary" onclick="increaseQuantity(${index})">+</button>
+                    </div>
+                </div>
             </div>
         `;
         basketList.appendChild(li);

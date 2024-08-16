@@ -10,18 +10,18 @@ fetch('https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood') //
         console.log(data);
         data.meals.forEach(meal => {
             const mealDiv = document.createElement('div');
-            mealDiv.classList.add('meal', 'd-flex', 'flex-column', 'justify-content-between', 'align-items-center','gap-2', 'col-12', 'col-md-6', 'col-lg-4', 'col-xl-3');
+            mealDiv.classList.add('meal', 'd-flex', 'flex-column', 'justify-content-between', 'align-items-center', 'gap-2', 'col-12', 'col-md-6', 'col-lg-4', 'col-xl-3');
             mealDiv.innerHTML = `
-            <div class="">
-            <img src="${meal.strMealThumb}" alt="${meal.strMeal}" class="">
-            </div>
+                <div class="">
+                    <img src="${meal.strMealThumb}" alt="${meal.strMeal}" class="">
+                </div>
                 <div class="">
                     <h4 class="card-title">${meal.strMeal}</h4>
-                    </div>
-                    <div class="btn-group">
-                    <button onclick="addToBasket('${meal.strMeal}', ${Math.floor(Math.random() * 450) + 50}, ${meal.strMealThumb})" class="btn btn-warning"><i class="fas fa-shopping-cart"></i></button>
-                        <button type="button" class="btn btn-secondary">${Math.floor(Math.random() * 450) + 50} MAD</button>
-                    </div>
+                </div>
+                <div class="btn-group">
+                    <button onclick="addToBasket('${meal.strMeal}', ${Math.floor(Math.random() * 450) + 50}, '${meal.strMealThumb}')" class="btn btn-warning"><i class="fas fa-shopping-cart"></i></button>
+                    <button type="button" class="btn btn-secondary">${Math.floor(Math.random() * 450) + 50} MAD</button>
+                </div>
             `;
             mealSection.appendChild(mealDiv);
         });
@@ -42,16 +42,23 @@ fetch('https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood') //
 // });
 
 function addToBasket(name, price, image) {
+    // log
+    console.log('test 1');
     const existingItem = basket.find(item => item.name === name);
     console.log(existingItem);
 
+    console.log('test 2');
+    
     if (existingItem) {
         existingItem.quantity++;
+        console.log('test 3');
+        
     } else {
         basket.push({ name, price, quantity: 1, image });
     }
+    console.log('test 4');
     localStorage.setItem('basket', JSON.stringify(basket));
-
+    console.log('test 5');
     // e.preventDefault();
     // change the badge value
     const badge = document.getElementById('basket-badge');
@@ -59,11 +66,15 @@ function addToBasket(name, price, image) {
     // if basket is empty, don't show the badge: class d-none & d-block
     if (basket.length === 0) {
         badge.classList.add('d-none');
+        console.log('test 6');
+        
     } else {
         badge.classList.remove('d-none');
+        console.log('test 7');
     }
 
     badge.textContent = basket.length;
+    console.log('test 8');
 }
 
 document.getElementById('basket-button').addEventListener('click', (e) => {
