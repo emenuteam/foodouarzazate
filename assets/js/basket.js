@@ -22,7 +22,7 @@ function updateBasket() {
                 <div class="">
                     <div class="input-group">
                         <button class="btn btn-outline-secondary" onclick="decreaseQuantity(${index})">-</button>
-                        <input type="text" class="form-control" value="${item.quantity}" readonly>
+                        <input type="text" class="form-control menu_item_counter" value="${item.quantity}" readonly>
                         <button class="btn btn-outline-secondary" onclick="increaseQuantity(${index})">+</button>
                     </div>
                 </div>

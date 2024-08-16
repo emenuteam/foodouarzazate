@@ -140,6 +140,10 @@ main {
     color: #ffffff;
 }
 
+.menu_item_counter {
+    width: 60px !important;
+}
+
 .btn-group:hover .btn {
     background-color: #ffcc00;
     /* Change to your desired hover color */
