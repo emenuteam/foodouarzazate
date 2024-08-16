@@ -34,7 +34,7 @@ const menu = [
     { name: "Double Chicken Burger", price: "60", category: "burger", image: "4.webp" },
     { name: "Burger Cordon Bleu", price: "35", category: "burger", image: "5.jpeg" },
     { name: "Double Cordon Burger", price: "60", category: "burger", image: "6.jpeg" },
-    
+
     { name: "Burrito Dinde", price: "20", category: "burrito", image: "1.jpg" },
     { name: "Burrito Mix", price: "25", category: "burrito", image: "2.jpg" },
     { name: "Burrito Viande Hachée", price: "25", category: "burrito", image: "3.jpg" },
@@ -95,6 +95,13 @@ $(() => {
 
 
     });
+
+    // handle the basket button click event to redirect to the basket page
+    document.getElementById('basket-button').addEventListener('click', (e) => {
+
+        window.location.href = 'basket.html';
+    });
+
 });
 
 /* -------------------- for formatting the category names ------------------- */
@@ -113,9 +120,14 @@ function capitalizeAndUppercaseSecond(word) {
 const createNewMenuItem = (meal) => {
     // check if the meal is already in the basket
     const existingItem = basket.find(item => item.name === meal.name);
-
+    
     const mealDiv = document.createElement('div');
     mealDiv.classList.add('meal', 'd-flex', 'flex-column', 'justify-content-between', 'align-items-center', 'gap-2');
+    
+    if (existingItem) {
+        mealDiv.classList.add('active');
+    }
+
     let image_path = './images/' + meal.category.split('_').join('').toUpperCase() + '/' + meal.image;
     mealDiv.innerHTML = `
                 <div class="">
@@ -164,19 +176,29 @@ showMenuItems();
 function addToBasket(name, price, image, e) {
     // log
     const existingItem = basket.find(item => item.name === name);
+    const btnGroup = e.currentTarget;
+    console.log(btnGroup.parent);
+    
 
-    if (existingItem) {
-        existingItem.quantity++;
-
-
-    } else {
+    if (!existingItem) {
+        // existingItem.quantity++;
         basket.push({ name, price, quantity: 1, image });
+    
+        // add the active class to the basket button parent
+        btnGroup.classList.add('active');
+        btnGroup.parentElement.classList.add('active');
+    }else {
+        basket = basket.filter(item => item.name !== name);
+        // remove the active class to the basket button parent
+        btnGroup.classList.remove('active');
+        btnGroup.parentElement.classList.remove('active');
     }
+
     localStorage.setItem('basket', JSON.stringify(basket));
-    // e.preventDefault();
+
     // change the badge value
     const badge = document.getElementById('basket-badge');
-    // const basket = JSON.parse(localStorage.getItem('basket')) || [];
+
     // if basket is empty, don't show the badge: class d-none & d-block
     if (basket.length === 0) {
         badge.classList.add('d-none');
@@ -187,24 +209,7 @@ function addToBasket(name, price, image, e) {
 
     badge.textContent = basket.length;
 
-    // add the active class to the basket button parent
-    const btnGroup = e.currentTarget;
-    btnGroup.classList.add('active');
-
 }
-
-document.getElementById('basket-button').addEventListener('click', (e) => {
-
-    window.location.href = 'basket.html';
-});
-
-// checkout-button
-document.getElementById('checkout-button').addEventListener('click', (e) => {
-    e.preventDefault();
-    // clear basket
-    localStorage.removeItem('basket');
-    window.location.href = 'checkout.html';
-});
 
 
 

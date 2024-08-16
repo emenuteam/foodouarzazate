@@ -51,6 +51,15 @@ main {
     max-width: 200px; */
 }
 
+.meal.active {
+    background-color: #ffcc006b;
+    /* Change to your desired hover color */
+    border-color: #ffcc006b;
+    /* Change to your desired hover color */
+    /* color: #fff; */
+    /* Change text color if needed */
+}
+
 .meal img {
     border-radius: 50%;
     width: 150px;
@@ -95,9 +104,27 @@ main {
     padding: 0;
 }
 
+.menu_item_counter {
+    width: 40px !important;
+}
+
+/* .basket-item {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    width: 100% !important;
+} */
+
+.basket-item-operators {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+}
+
 .basket-item button {
-    background-color: #FF3333;
-    /* Red */
+    background-color: #ff6c00e5;
     border: none;
     color: #fff;
     padding: 0.5em;
@@ -109,7 +136,12 @@ main {
     text-align: center;
 }
 
-/*  */
+.basket-item .input-group * {
+    height: 30px;
+    display: flex;
+    align-items: center;
+}
+
 .custom_font {
     font-family: 'Dancing Script', cursive;
     font-size: 1.5rem;
@@ -164,10 +196,6 @@ main {
     color: #ffffff;
 }
 
-.menu_item_counter {
-    width: 60px !important;
-}
-
 .btn-group:hover .btn {
     background-color: #ffcc00;
     /* Change to your desired hover color */
@@ -178,8 +206,6 @@ main {
 }
 
 .btn-group:hover .btn-price {
-    /* color secondary of bs5 */
-
     background-color: #6c757d;
     /* Change to your desired hover color */
     border-color: #6c757d;
@@ -198,8 +224,6 @@ main {
 }
 
 .btn-group.active .btn-price {
-    /* color secondary of bs5 */
-
     background-color: #6c757d;
     /* Change to your desired hover color */
     border-color: #6c757d;
@@ -208,14 +232,62 @@ main {
     /* Change text color if needed */
 }
 
-@media (max-width: 391px) {
+@media (max-width: 375px) {
+    li.basket-item {
 
-    .food_section .filters_menu li {
-        padding: 2px 0px;
+        /* .menu_item_counter {
+            width: 40%;
+            justify-content: center;
+        } */
+
+        &>div:nth-child(1) {
+            display: flex;
+            flex-direction: column !important;
+            justify-content: center;
+            align-items: center;
+
+            /* align the first item in start */
+
+            &>div:nth-child(1) {
+                width: 100%;
+                align-items: flex-start;
+            }
+        }
+
+        .basket-item-operators {
+            width: 100%;
+            display: flex;
+            /* flex-direction: column !important; */
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+            /* border: 1px solid #000; */
+
+            .input-group {
+                width: 85px;
+            }
+        }
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 391px) {
+    .food_section .filters_menu li {
+        padding: 2px 0px;
+    }
+
+    .meal .menu_item_counter {
+        width: 30px !important;
+        display: inline;
+    }
+
+    li.basket-item .basket-item-operators {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 411px) {
     .food_section .filters_menu {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -230,7 +302,7 @@ main {
     }
 }
 
-@media (max-width: 411px) {
+@media (max-width: 600px) {
     .food_section .filters_menu {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
