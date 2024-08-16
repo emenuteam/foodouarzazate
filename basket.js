@@ -10,7 +10,10 @@ function updateBasket() {
         li.classList.add('basket-item');
         li.innerHTML = `
             <div class="row">
-            <div class="col">${item.name} - ${item.price}dh</div>
+            <div class="col">
+                <img src="${item.image}" alt="${item.name}" class="basket-item-image">
+                <span>${item.name} - ${item.price}dh</span>
+            </div>
             <div class="col">
                 <div class="input-group">
                 <button class="btn btn-outline-secondary" onclick="decreaseQuantity(${index})">-</button>

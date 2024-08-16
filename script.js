@@ -10,23 +10,21 @@ fetch('https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood') //
         console.log(data);
         data.meals.forEach(meal => {
             const mealDiv = document.createElement('div');
-            mealDiv.classList.add('meal','d-flex','flex-column','justify-content-between','align-items-center');
+            mealDiv.classList.add('meal', 'd-flex', 'flex-column', 'justify-content-between', 'align-items-center','gap-2', 'col-12', 'col-md-6', 'col-lg-4', 'col-xl-3');
             mealDiv.innerHTML = `
             <div class="">
             <img src="${meal.strMealThumb}" alt="${meal.strMeal}" class="">
             </div>
                 <div class="">
                     <h4 class="card-title">${meal.strMeal}</h4>
-                    <p class="card-text">${Math.floor(Math.random() * 450) + 50} dh</p>
-                    <div class="btn-group">
-                    <button onclick="addToBasket('${meal.strMeal}', ${Math.floor(Math.random() * 450) + 50})" class="btn btn-warning"><i class="fas fa-shopping-cart"></i></button>
-                        <button type="button" class="btn btn-secondary">$${Math.floor(Math.random() * 450) + 50}</button>
                     </div>
-                </div>
+                    <div class="btn-group">
+                    <button onclick="addToBasket('${meal.strMeal}', ${Math.floor(Math.random() * 450) + 50}, ${meal.strMealThumb})" class="btn btn-warning"><i class="fas fa-shopping-cart"></i></button>
+                        <button type="button" class="btn btn-secondary">${Math.floor(Math.random() * 450) + 50} MAD</button>
+                    </div>
             `;
             mealSection.appendChild(mealDiv);
-        }
-        );
+        });
     }
     ).catch(error => console.log(error));
 // meals.forEach(meal => {
@@ -43,14 +41,14 @@ fetch('https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood') //
 //     mealSection.appendChild(mealDiv);
 // });
 
-function addToBasket(name, price) {
+function addToBasket(name, price, image) {
     const existingItem = basket.find(item => item.name === name);
     console.log(existingItem);
 
     if (existingItem) {
         existingItem.quantity++;
     } else {
-        basket.push({ name, price, quantity: 1 });
+        basket.push({ name, price, quantity: 1, image });
     }
     localStorage.setItem('basket', JSON.stringify(basket));
 

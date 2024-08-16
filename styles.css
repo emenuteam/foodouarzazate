@@ -43,10 +43,15 @@ main {
     width: 48%; /* Two per row on mobile */
 }
 
-.meal img {
-    border-radius: 50%;
+/* div .meal img {
     width: 100px;
     height: 100px;
+} */
+
+.meal img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
 }
 
 @media (min-width: 900px) {
