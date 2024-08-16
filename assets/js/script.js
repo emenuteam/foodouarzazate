@@ -38,12 +38,12 @@ const menu = [
     { name: "Nuggets Pack 9", price: "40", category: "nugget", image: "2.jpg" },
     { name: "Nuggets Pack 12", price: "60", category: "nugget", image: "3.jpg" },
 
-    { name: "Pepsi", price: "5", category: "boisson", image: "1.jpg" },
-    { name: "7up", price: "5", category: "boisson", image: "2.webp" },
-    { name: "Tropical", price: "6", category: "boisson", image: "3.webp" },
-    { name: "Orange", price: "5", category: "boisson", image: "4.webp" },
-    { name: "Citron", price: "5", category: "boisson", image: "5.webp" },
-    { name: "Aquafina", price: "5", category: "boisson", image: "6.jpeg" },
+    { name: "Pepsi", price: "5", category: "beverage", image: "1.jpg" },
+    { name: "7up", price: "5", category: "beverage", image: "2.webp" },
+    { name: "Tropical", price: "6", category: "beverage", image: "3.webp" },
+    { name: "Orange", price: "5", category: "beverage", image: "4.webp" },
+    { name: "Citron", price: "5", category: "beverage", image: "5.webp" },
+    { name: "Aquafina", price: "5", category: "beverage", image: "6.jpeg" },
 
     { name: "Tacos Dinde XL", category: "tacos_xl", image: "1.jpg", price: "50" },
     { name: "Tacos Viande Hachée XL", category: "tacos_xl", image: "2.jpg", price: "60" },
@@ -108,8 +108,11 @@ function capitalizeAndUppercaseSecond(word) {
 
 
 const createNewMenuItem = (meal) => {
+    // check if the meal is already in the basket
+    const existingItem = basket.find(item => item.name === meal.name);
+
     const mealDiv = document.createElement('div');
-    mealDiv.classList.add('meal', 'd-flex', 'flex-column', 'justify-content-between', 'align-items-center', 'gap-2', 'col-12', 'col-md-6', 'col-lg-4', 'col-xl-3');
+    mealDiv.classList.add('meal', 'd-flex', 'flex-column', 'justify-content-between', 'align-items-center', 'gap-2');
     let image_path = './images/' + meal.category.split('_').join('').toUpperCase() + '/' + meal.image;
     mealDiv.innerHTML = `
                 <div class="">
@@ -123,6 +126,10 @@ const createNewMenuItem = (meal) => {
                     <button type="button" class="btn btn-outline-secondary btn-price">${meal.price} DH</button>
                 </div>
             `;
+    // create the meal div
+    if (existingItem) {
+        mealDiv.querySelector('.btn-group').classList.add('active');
+    }
     mealSection.appendChild(mealDiv);
 };
 

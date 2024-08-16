@@ -39,6 +39,10 @@ function decreaseQuantity(index) {
         basket.splice(index, 1);
     }
     localStorage.setItem('basket', JSON.stringify(basket));
+
+    // update the basket badge
+    const badge = document.getElementById('basket-badge');
+    badge.textContent = basket.length;
     updateBasket();
 }
 
@@ -72,5 +76,7 @@ updateBasket();
 
 // handle the back btn click event
 document.getElementById('back-button').addEventListener('click', () => {
-    window.history.back();
+    // window.location.reload();
+    // window.history.back();
+    window.location.href = 'index.html';
 });

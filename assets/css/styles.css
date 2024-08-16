@@ -46,13 +46,9 @@ main {
     border-radius: 10px;
     padding: 1em;
     text-align: center;
+    /* width: 30%;
+    max-width: 200px; */
 }
-
-
-/* div .meal img {
-    width: 100px;
-    height: 100px;
-} */
 
 .meal img {
     border-radius: 50%;
@@ -60,10 +56,29 @@ main {
     height: 150px;
 }
 
-@media (min-width: 900px) {
+@media (max-width: 415px) {
+    #meal-section {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        /* Two items per row */
+        gap: 1em;
+    }
+
     .meal {
-        width: 23%;
-        /* Four per row on desktop */
+        flex-basis: auto;
+    }
+}
+
+@media (max-width: 390px) {
+    #meal-section {
+        display: grid;
+        grid-template-columns: 1fr;
+        /* One item per row */
+        gap: 1em;
+    }
+
+    .meal {
+        flex-basis: 100%;
     }
 }
 
@@ -71,13 +86,6 @@ main {
     list-style-type: none;
     padding: 0;
 }
-
-/* .basket-item {
-    display: flex;
-    justify-content: space-between;
-    padding: 1em;
-    border-bottom: 1px solid #ddd;
-} */
 
 .basket-item button {
     background-color: #FF3333;
@@ -145,19 +153,16 @@ main {
 
 @media (max-width: 411px) {
     .food_section .filters_menu {
-        padding: 0;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-        list-style-type: none;
-        margin: 45px 0 20px 0;
-        gap: 10px;
-        box-sizing: border-box;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        /* Three items per row */
+        gap: 5px;
+        font-size: .9rem;
+    }
+
+    .meal .card-title {
+        width: 100%;
+        font-size: 1rem;
     }
 }
 
