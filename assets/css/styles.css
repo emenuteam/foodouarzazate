@@ -22,6 +22,10 @@ header {
     z-index: 1000;
 }
 
+nav [class^="fa"] {
+    color: #fff;
+}
+
 main {
     flex: 1;
     padding: 1em;
@@ -82,4 +86,42 @@ main {
 .basket-item input {
     width: 50px;
     text-align: center;
+}
+
+/*  */
+.custom_font {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5rem;
+    font-weight: bolder;
+}
+.food_section h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    color: #222831;
+    text-align: center;
+    font-weight: 900;
+}
+.food_section .filters_menu {
+    padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    list-style-type: none;
+    margin: 45px 0 20px 0;
+}
+
+.food_section .filters_menu li {
+    padding: 7px 25px;
+    cursor: pointer;
+    border-radius: 25px;
+}
+
+.food_section .filters_menu li.active {
+    background-color: #222831;
+    color: #ffffff;
 }
