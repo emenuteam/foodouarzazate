@@ -9,8 +9,10 @@ body {
     min-height: 100vh;
 }
 
-header, footer {
-    background-color: #FFCC00; /* Yellow */
+header,
+footer {
+    background-color: #FFCC00;
+    /* Yellow */
     color: #fff;
     text-align: center;
     padding: 1em;
@@ -46,6 +48,7 @@ main {
     text-align: center;
 }
 
+
 /* div .meal img {
     width: 100px;
     height: 100px;
@@ -59,7 +62,8 @@ main {
 
 @media (min-width: 900px) {
     .meal {
-        width: 23%; /* Four per row on desktop */
+        width: 23%;
+        /* Four per row on desktop */
     }
 }
 
@@ -76,7 +80,8 @@ main {
 } */
 
 .basket-item button {
-    background-color: #FF3333; /* Red */
+    background-color: #FF3333;
+    /* Red */
     border: none;
     color: #fff;
     padding: 0.5em;
@@ -95,7 +100,7 @@ main {
     font-weight: bolder;
 }
 
-.food_section{
+.food_section {
     box-sizing: border-box;
 }
 
@@ -106,6 +111,7 @@ main {
     text-align: center;
     font-weight: 900;
 }
+
 .food_section .filters_menu {
     padding: 0;
     display: -webkit-box;
@@ -122,12 +128,46 @@ main {
     box-sizing: border-box;
 }
 
+@media (max-width: 600px) {
+    .food_section .filters_menu {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        /* Three items per row */
+        gap: 5px;
+        font-size: .9rem;
+    }
+
+    .meal .card-title {
+        width: 100%;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 411px) {
+    .food_section .filters_menu {
+        padding: 0;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        list-style-type: none;
+        margin: 45px 0 20px 0;
+        gap: 10px;
+        box-sizing: border-box;
+    }
+}
+
 .food_section .filters_menu li {
     padding: 7px 25px;
     cursor: pointer;
     border-radius: 25px;
     box-sizing: border-box;
     border: 2px solid transparent;
+    text-align: center;
 }
 
 
@@ -152,7 +192,28 @@ main {
     color: #fff;
     /* Change text color if needed */
 }
+
 .btn-group:hover .btn-price {
+    /* color secondary of bs5 */
+
+    background-color: #6c757d;
+    /* Change to your desired hover color */
+    border-color: #6c757d;
+    /* Change to your desired hover color */
+    color: #fff;
+    /* Change text color if needed */
+}
+
+.btn-group.active .btn {
+    background-color: #ffcc00;
+    /* Change to your desired hover color */
+    border-color: #ffcc00;
+    /* Change to your desired hover color */
+    color: #fff;
+    /* Change text color if needed */
+}
+
+.btn-group.active .btn-price {
     /* color secondary of bs5 */
 
     background-color: #6c757d;

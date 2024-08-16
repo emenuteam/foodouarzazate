@@ -4,24 +4,47 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Basket - emenuteam Meals</title>
+
+		<!-- ------------------------------- styles -------------------------------- -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 		<link rel="stylesheet" href="./assets/css/styles.css" />
+
+		<!-- ------------------------------- scripts ------------------------------- -->
+		<!-- jquery -->
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 		<script defer src="./assets/js/basket.js"></script>
 	</head>
 	<body>
-		<header>
-			<h1>Your Basket</h1>
-		</header>
+		<!-- ------------------------------ <header> ------------------------------- -->
+		<nav class="navbar navbar-expand-lg navbar-dark bg-warning">
+			<div class="container-fluid">
+				<a class="navbar-brand fw-bolder custom_font" href="#">FOOD OUARZAZATE</a>
+				<div class="pe-3">
+					<button class="btn p-0 position-relative" id="basket-button">
+						<i class="fa-solid fa-cart-shopping"></i>
+						<span class="position-absolute top-0 start-100 translate-middle badge badge-sm rounded-pill bg-danger d-none" id="basket-badge">
+							<span class="visually-hidden">unread messages</span>
+						</span>
+					</button>
+				</div>
+			</div>
+		</nav>
 
 		<main>
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 offset-md-2">
-						<h2>Your Basket</h2>
+						<div class="d-flex align-content-center align-items-center align-middle gap-4 mb-3">
+							<button id="back-button" class="btn btn-sm btn-warning text-light fw-bold">Back</button>
+							<h2 class="m-0">Your Basket</h2>
+						</div>
 						<ul id="basket-list" class="list-group">
 							<!-- Basket items will be displayed here -->
 						</ul>
-						<button id="checkout-button" class="btn btn-warning mt-3">Checkout</button>
+						<div class="text-center">
+							<button id="checkout-button" class="btn btn-warning mt-3">Checkout</button>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -31,5 +54,8 @@
 		<footer class="d-flex justify-content-center align-content-center">
 			<p class="">Made by emenuteam</p>
 		</footer>
+
+		<!-- ------------------------------- scripts ------------------------------- -->
+		 <script src="./assets/js/main.js"></script>
 	</body>
 </html>

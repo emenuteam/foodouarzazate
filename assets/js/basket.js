@@ -69,3 +69,8 @@ document.getElementById('checkout-button').addEventListener('click', () => {
 });
 
 updateBasket();
+
+// handle the back btn click event
+document.getElementById('back-button').addEventListener('click', () => {
+    window.history.back();
+});

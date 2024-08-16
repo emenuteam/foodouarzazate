@@ -19,29 +19,13 @@ const menu = [
     { name: "Tacos Mix", price: "35", category: "tacos", image: "7.png" },
     { name: "Tacos Dinde", price: "30", category: "tacos", image: "8.jpg" },
 
-        { name: "Tacos Dinde XL", category: "tacos_xl", image: "1.jpg", price: "50" },
-    { name: "Tacos Viande Hachée XL", category: "tacos_xl", image: "2.jpg", price: "60" },
-    { name: "Tacos Mix XL", category: "tacos_xl", image: "3.jpeg", price: "60" },
-    { name: "Tacos Nuggets XL", category: "tacos_xl", image: "4.png", price: "50" },
-    { name: "Tacos Cordon Bleu XL", category: "tacos_xl", image: "5.jpg", price: "60" },
-    { name: "Tacos Special XL", category: "tacos_xl", image: "6.jpg", price: "70" },
-    { name: "Tacos Sauccice XL", category: "tacos_xl", image: "7.jpg", price: "50" },
-
-        { name: "Burrito Dinde", price: "20", category: "burrito", image: "1.jpg" },
+    { name: "Burrito Dinde", price: "20", category: "burrito", image: "1.jpg" },
     { name: "Burrito Mix", price: "25", category: "burrito", image: "2.jpg" },
     { name: "Burrito Viande Hachée", price: "25", category: "burrito", image: "3.jpg" },
     { name: "Burrito Nuggets", price: "20", category: "burrito", image: "4.jpeg" },
     { name: "Burrito Cordon Bleu", price: "25", category: "burrito", image: "5.jpg" },
     { name: "Burrito Special", price: "25", category: "burrito", image: "6.jpg" },
     { name: "Burrito Saussice", price: "20", category: "burrito", image: "7.webp" },
-
-    { name: "Burrito Viande Hachée XL", price: "40", category: "burrito_xl", image: "1.jpeg" },
-    { name: "Burrito Dinde XL", price: "35", category: "burrito_xl", image: "2.jpeg" },
-    { name: "Burrito Mix XL", price: "50", category: "burrito_xl", image: "3.webp" },
-    { name: "Burrito Nuggets XL", price: "35", category: "burrito_xl", image: "4.jpg" },
-    { name: "Burrito Saussice XL", price: "35", category: "burrito_xl", image: "5.webp" },
-    { name: "Burrito Cordon Bleu XL", price: "35", category: "burrito_xl", image: "6.jpeg" },
-    { name: "Burrito Special XL", price: "60", category: "burrito_xl", image: "7.png" },
 
     { name: "Cheese Burger", price: "35", category: "burger", image: "1.jpeg" },
     { name: "Double Burger", price: "60", category: "burger", image: "2.jpg" },
@@ -60,10 +44,27 @@ const menu = [
     { name: "Orange", price: "5", category: "boisson", image: "4.webp" },
     { name: "Citron", price: "5", category: "boisson", image: "5.webp" },
     { name: "Aquafina", price: "5", category: "boisson", image: "6.jpeg" },
+
+    { name: "Tacos Dinde XL", category: "tacos_xl", image: "1.jpg", price: "50" },
+    { name: "Tacos Viande Hachée XL", category: "tacos_xl", image: "2.jpg", price: "60" },
+    { name: "Tacos Mix XL", category: "tacos_xl", image: "3.jpeg", price: "60" },
+    { name: "Tacos Nuggets XL", category: "tacos_xl", image: "4.png", price: "50" },
+    { name: "Tacos Cordon Bleu XL", category: "tacos_xl", image: "5.jpg", price: "60" },
+    { name: "Tacos Special XL", category: "tacos_xl", image: "6.jpg", price: "70" },
+    { name: "Tacos Sauccice XL", category: "tacos_xl", image: "7.jpg", price: "50" },
+
+    { name: "Burrito Viande Hachée XL", price: "40", category: "burrito_xl", image: "1.jpeg" },
+    { name: "Burrito Dinde XL", price: "35", category: "burrito_xl", image: "2.jpeg" },
+    { name: "Burrito Mix XL", price: "50", category: "burrito_xl", image: "3.webp" },
+    { name: "Burrito Nuggets XL", price: "35", category: "burrito_xl", image: "4.jpg" },
+    { name: "Burrito Saussice XL", price: "35", category: "burrito_xl", image: "5.webp" },
+    { name: "Burrito Cordon Bleu XL", price: "35", category: "burrito_xl", image: "6.jpeg" },
+    { name: "Burrito Special XL", price: "60", category: "burrito_xl", image: "7.png" },
 ];
 
 // get the menu section
 const mealSection = document.getElementById('meal-section');
+let basket = JSON.parse(localStorage.getItem('basket')) || [];
 
 $(() => {
     // the menu_filter
@@ -72,7 +73,10 @@ $(() => {
         $(this).addClass('active');
 
         const category = $(this).data('category');
-        
+
+        // clear the menu
+        $('#meal-section').empty();
+
         if (category == "All" || category == undefined) {
             showMenuItems();
             return;
@@ -80,7 +84,6 @@ $(() => {
 
         const categoryFood = menu.filter(food => food.category === category);
         console.log(categoryFood);
-        
 
         // append the new menu
         categoryFood.forEach(food => {
@@ -107,7 +110,7 @@ function capitalizeAndUppercaseSecond(word) {
 const createNewMenuItem = (meal) => {
     const mealDiv = document.createElement('div');
     mealDiv.classList.add('meal', 'd-flex', 'flex-column', 'justify-content-between', 'align-items-center', 'gap-2', 'col-12', 'col-md-6', 'col-lg-4', 'col-xl-3');
-    let image_path =  './images/' + meal.category.split('_').join('').toUpperCase() + '/' + meal.image;
+    let image_path = './images/' + meal.category.split('_').join('').toUpperCase() + '/' + meal.image;
     mealDiv.innerHTML = `
                 <div class="">
                     <img src="${image_path}" alt="${meal.name}" class="">
@@ -115,7 +118,7 @@ const createNewMenuItem = (meal) => {
                 <div class="">
                     <h4 class="card-title">${meal.name}</h4>
                 </div>
-                <div class="btn-group" onclick="addToBasket('${meal.name}', ${meal.price}, '${image_path}')">
+                <div class="btn-group btn_add_to_basket" onclick="addToBasket('${meal.name}', ${meal.price}, '${image_path}', event)">
                     <button class="btn btn-outline-warning icon"><i class="fas fa-shopping-cart"></i></button>
                     <button type="button" class="btn btn-outline-secondary btn-price">${meal.price} DH</button>
                 </div>
@@ -123,12 +126,10 @@ const createNewMenuItem = (meal) => {
     mealSection.appendChild(mealDiv);
 };
 
-let basket = JSON.parse(localStorage.getItem('basket')) || [];
-
 // Beef, Chicken, Dessert, Lamb, Pasta, Pork, Seafood, Side, Starter, Vegan, Vegetarian
 
 // append categories
-const categories = menu.map(meal => meal.category)
+const categories = menu.map(meal => meal.category);
 const uniqueCategories = [...new Set(categories)];
 
 uniqueCategories.forEach(category => {
@@ -150,7 +151,7 @@ const showMenuItems = () => {
 showMenuItems();
 
 
-function addToBasket(name, price, image) {
+function addToBasket(name, price, image, e) {
     // log
     const existingItem = basket.find(item => item.name === name);
 
@@ -170,13 +171,16 @@ function addToBasket(name, price, image) {
     if (basket.length === 0) {
         badge.classList.add('d-none');
 
-
     } else {
         badge.classList.remove('d-none');
-
     }
 
     badge.textContent = basket.length;
+
+    // add the active class to the basket button parent
+    const btnGroup = e.currentTarget;
+    btnGroup.classList.add('active');
+
 }
 
 document.getElementById('basket-button').addEventListener('click', (e) => {
