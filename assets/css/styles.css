@@ -94,6 +94,11 @@ main {
     font-size: 1.5rem;
     font-weight: bolder;
 }
+
+.food_section{
+    box-sizing: border-box;
+}
+
 .food_section h2 {
     font-family: 'Dancing Script', cursive;
     font-size: 2.5rem;
@@ -113,12 +118,21 @@ main {
     justify-content: center;
     list-style-type: none;
     margin: 45px 0 20px 0;
+    gap: 10px;
+    box-sizing: border-box;
 }
 
 .food_section .filters_menu li {
     padding: 7px 25px;
     cursor: pointer;
     border-radius: 25px;
+    box-sizing: border-box;
+    border: 2px solid transparent;
+}
+
+
+.food_section .filters_menu li:hover {
+    border: 2px solid #222831;
 }
 
 .food_section .filters_menu li.active {
