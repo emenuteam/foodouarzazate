@@ -19,6 +19,22 @@ const menu = [
     { name: "Tacos Mix", price: "35", category: "tacos", image: "7.png" },
     { name: "Tacos Dinde", price: "30", category: "tacos", image: "8.jpg" },
 
+
+    { name: "Tacos Dinde XL", category: "tacos_xl", image: "1.jpg", price: "50" },
+    { name: "Tacos Viande Hachée XL", category: "tacos_xl", image: "2.jpg", price: "60" },
+    { name: "Tacos Mix XL", category: "tacos_xl", image: "3.jpeg", price: "60" },
+    { name: "Tacos Nuggets XL", category: "tacos_xl", image: "4.png", price: "50" },
+    { name: "Tacos Cordon Bleu XL", category: "tacos_xl", image: "5.jpg", price: "60" },
+    { name: "Tacos Special XL", category: "tacos_xl", image: "6.jpg", price: "70" },
+    { name: "Tacos Sauccice XL", category: "tacos_xl", image: "7.jpg", price: "50" },
+
+    { name: "Cheese Burger", price: "35", category: "burger", image: "1.jpeg" },
+    { name: "Double Burger", price: "60", category: "burger", image: "2.jpg" },
+    { name: "Chicken Burger", price: "35", category: "burger", image: "3.jpg" },
+    { name: "Double Chicken Burger", price: "60", category: "burger", image: "4.webp" },
+    { name: "Burger Cordon Bleu", price: "35", category: "burger", image: "5.jpeg" },
+    { name: "Double Cordon Burger", price: "60", category: "burger", image: "6.jpeg" },
+    
     { name: "Burrito Dinde", price: "20", category: "burrito", image: "1.jpg" },
     { name: "Burrito Mix", price: "25", category: "burrito", image: "2.jpg" },
     { name: "Burrito Viande Hachée", price: "25", category: "burrito", image: "3.jpg" },
@@ -27,12 +43,14 @@ const menu = [
     { name: "Burrito Special", price: "25", category: "burrito", image: "6.jpg" },
     { name: "Burrito Saussice", price: "20", category: "burrito", image: "7.webp" },
 
-    { name: "Cheese Burger", price: "35", category: "burger", image: "1.jpeg" },
-    { name: "Double Burger", price: "60", category: "burger", image: "2.jpg" },
-    { name: "Chicken Burger", price: "35", category: "burger", image: "3.jpg" },
-    { name: "Double Chicken Burger", price: "60", category: "burger", image: "4.webp" },
-    { name: "Burger Cordon Bleu", price: "35", category: "burger", image: "5.jpeg" },
-    { name: "Double Cordon Burger", price: "60", category: "burger", image: "6.jpeg" },
+    { name: "Burrito Viande Hachée XL", price: "40", category: "burrito_xl", image: "1.jpeg" },
+    { name: "Burrito Dinde XL", price: "35", category: "burrito_xl", image: "2.jpeg" },
+    { name: "Burrito Mix XL", price: "50", category: "burrito_xl", image: "3.webp" },
+    { name: "Burrito Nuggets XL", price: "35", category: "burrito_xl", image: "4.jpg" },
+    { name: "Burrito Saussice XL", price: "35", category: "burrito_xl", image: "5.webp" },
+    { name: "Burrito Cordon Bleu XL", price: "35", category: "burrito_xl", image: "6.jpeg" },
+    { name: "Burrito Special XL", price: "60", category: "burrito_xl", image: "7.png" },
+
 
     { name: "Nuggets Pack 6", price: "30", category: "nugget", image: "1.jpeg" },
     { name: "Nuggets Pack 9", price: "40", category: "nugget", image: "2.jpg" },
@@ -45,21 +63,6 @@ const menu = [
     { name: "Citron", price: "5", category: "beverage", image: "5.webp" },
     { name: "Aquafina", price: "5", category: "beverage", image: "6.jpeg" },
 
-    { name: "Tacos Dinde XL", category: "tacos_xl", image: "1.jpg", price: "50" },
-    { name: "Tacos Viande Hachée XL", category: "tacos_xl", image: "2.jpg", price: "60" },
-    { name: "Tacos Mix XL", category: "tacos_xl", image: "3.jpeg", price: "60" },
-    { name: "Tacos Nuggets XL", category: "tacos_xl", image: "4.png", price: "50" },
-    { name: "Tacos Cordon Bleu XL", category: "tacos_xl", image: "5.jpg", price: "60" },
-    { name: "Tacos Special XL", category: "tacos_xl", image: "6.jpg", price: "70" },
-    { name: "Tacos Sauccice XL", category: "tacos_xl", image: "7.jpg", price: "50" },
-
-    { name: "Burrito Viande Hachée XL", price: "40", category: "burrito_xl", image: "1.jpeg" },
-    { name: "Burrito Dinde XL", price: "35", category: "burrito_xl", image: "2.jpeg" },
-    { name: "Burrito Mix XL", price: "50", category: "burrito_xl", image: "3.webp" },
-    { name: "Burrito Nuggets XL", price: "35", category: "burrito_xl", image: "4.jpg" },
-    { name: "Burrito Saussice XL", price: "35", category: "burrito_xl", image: "5.webp" },
-    { name: "Burrito Cordon Bleu XL", price: "35", category: "burrito_xl", image: "6.jpeg" },
-    { name: "Burrito Special XL", price: "60", category: "burrito_xl", image: "7.png" },
 ];
 
 // get the menu section

@@ -30,14 +30,14 @@ nav [class^="fa"] {
 
 main {
     flex: 1;
-    padding: 1em;
+    /* padding: 1em; */
 }
 
 #meal-section {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1em;
+    justify-items: center;
 }
 
 .meal {
@@ -46,6 +46,7 @@ main {
     border-radius: 10px;
     padding: 1em;
     text-align: center;
+    width: 100%;
     /* width: 30%;
     max-width: 200px; */
 }
@@ -54,6 +55,13 @@ main {
     border-radius: 50%;
     width: 150px;
     height: 150px;
+}
+
+@media (min-width: 1024px) {
+    #meal-section {
+        grid-template-columns: repeat(4, 1fr);
+        /* Limit to 4 items per row */
+    }
 }
 
 @media (max-width: 415px) {
@@ -121,7 +129,7 @@ main {
 }
 
 .food_section .filters_menu {
-    padding: 0;
+    padding: 0 1rem;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -136,35 +144,6 @@ main {
     box-sizing: border-box;
 }
 
-@media (max-width: 600px) {
-    .food_section .filters_menu {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        /* Three items per row */
-        gap: 5px;
-        font-size: .9rem;
-    }
-
-    .meal .card-title {
-        width: 100%;
-        font-size: 1rem;
-    }
-}
-
-@media (max-width: 411px) {
-    .food_section .filters_menu {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        /* Three items per row */
-        gap: 5px;
-        font-size: .9rem;
-    }
-
-    .meal .card-title {
-        width: 100%;
-        font-size: 1rem;
-    }
-}
 
 .food_section .filters_menu li {
     padding: 7px 25px;
@@ -227,4 +206,41 @@ main {
     /* Change to your desired hover color */
     color: #fff;
     /* Change text color if needed */
+}
+
+@media (max-width: 391px) {
+
+    .food_section .filters_menu li {
+        padding: 2px 0px;
+    }
+}
+
+@media (max-width: 600px) {
+    .food_section .filters_menu {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        /* Three items per row */
+        gap: 5px;
+        font-size: .9rem;
+    }
+
+    .meal .card-title {
+        width: 100%;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 411px) {
+    .food_section .filters_menu {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        /* Three items per row */
+        gap: 5px;
+        font-size: .9rem;
+    }
+
+    .meal .card-title {
+        width: 100%;
+        font-size: 1rem;
+    }
 }
