@@ -9,14 +9,19 @@ $(() => {
             return;
         }
 
-        let orderDetails = "Your Order:\n";
+        let orderDetails = "*My Order:*\n";
+        let totalPrice = 0;
+
         basket.forEach(item => {
-            orderDetails += `${item.name} x ${item.quantity} - ${item.price}dh each\n`;
+            orderDetails += `${item.name} x ${item.quantity} - ${item.price}DH\n`;
+            totalPrice += item.price * item.quantity;
         });
 
-        const whatsappURL = `https://wa.me/?text=${encodeURIComponent(orderDetails)}`;
-        window.open(whatsappURL, '_blank');
+        orderDetails += `\nTotal Price: *${totalPrice}DH*`;
 
+        const whatsappNumber = "0621908080";
+        const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(orderDetails)}`;
+        window.open(whatsappURL, '_blank');
         // clear the basket
         localStorage.removeItem('basket');
         basket.length = 0;
@@ -26,7 +31,7 @@ $(() => {
     });
 
     updateBasket();
-    calculateAndUpdateTotalPrice()
+    calculateAndUpdateTotalPrice();
 
     // handle the back btn click event
     document.getElementById('back-button').addEventListener('click', () => {

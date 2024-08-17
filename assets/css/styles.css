@@ -318,8 +318,19 @@ main {
 }
 
 /* cusotmize the scroll bar color */
+.os-scrollbar-horizontal,
+.os-scrollbar-vertical {
+    /* background-color: white; */
+    /* Background color of the scrollbar track */
+}
+
 .os-scrollbar-handle {
-    background: rgb(255, 204, 0);
+    background: rgb(255, 226, 110);;
+}
+
+.os-scrollbar-handle:hover {
+    background-color: rgb(255, 204, 0);
+    /* Color of the scrollbar handle on hover */
 }
 
 .scroll-to-top {
