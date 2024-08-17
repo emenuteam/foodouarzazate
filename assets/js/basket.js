@@ -9,27 +9,28 @@ $(() => {
             return;
         }
 
-        let orderDetails = "*My Order:*\n";
+        let orderDetails = "My Order:\n";
         let totalPrice = 0;
 
         basket.forEach(item => {
-            orderDetails += `${item.name} x ${item.quantity} - ${item.price}DH\n`;
+            orderDetails += `- ${item.name.trim()} x ${item.quantity} - ${item.price}DH\n`;
             totalPrice += item.price * item.quantity;
         });
 
-        orderDetails += `\nTotal Price: *${totalPrice}DH*`;
+        orderDetails += `\nTotal: ${totalPrice}DH`;
 
         const whatsappNumber = "0621908080";
         const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(orderDetails)}`;
         window.open(whatsappURL, '_blank');
-        // clear the basket
+
+        // Clear the basket
         localStorage.removeItem('basket');
         basket.length = 0;
         updateBasket();
-        // return home
+
+        // Return home
         window.location.href = 'index.html';
     });
-
     updateBasket();
     calculateAndUpdateTotalPrice();
 
