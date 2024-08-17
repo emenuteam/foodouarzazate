@@ -210,6 +210,3 @@ function addToBasket(name, price, image, e) {
     badge.textContent = basket.length;
 
 }
-
-
-
