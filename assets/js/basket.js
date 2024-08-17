@@ -9,15 +9,15 @@ $(() => {
             return;
         }
 
-        let orderDetails = "My Order:\n";
+        let orderDetails = "*My Order*:\n";
         let totalPrice = 0;
 
         basket.forEach(item => {
-            orderDetails += `- ${item.name.trim()} x ${item.quantity} - ${item.price}DH\n`;
+            orderDetails += `- ${item.name.trim()} x *${item.quantity}*  _*${item.price}DH*_\n`;
             totalPrice += item.price * item.quantity;
         });
 
-        orderDetails += `\nTotal: ${totalPrice}DH`;
+        orderDetails += `\nTotal: *${totalPrice}DH*`;
 
         const whatsappNumber = "0621908080";
         const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(orderDetails)}`;
