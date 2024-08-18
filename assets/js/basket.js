@@ -19,7 +19,7 @@ $(() => {
 
         orderDetails += `\nTotal: *${totalPrice}DH*`;
 
-        const whatsappNumber = "0621908080";
+        const whatsappNumber = "+212697069317";
         const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(orderDetails)}`;
         window.open(whatsappURL, '_blank');
 
