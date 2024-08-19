@@ -10,7 +10,12 @@
 		<!-- ---------------------------- google fonts ----------------------------- -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet" />
+		<!-- <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet" /> -->
+		<!-- <link rel="preconnect" href="https://fonts.googleapis.com" /> -->
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+		
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 
 		<!-- ------------------------------- styles -------------------------------- -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -24,13 +29,13 @@
 	</head>
 	<body>
 		<!-- ------------------------------ <header> ------------------------------- -->
-		<nav class="navbar navbar-expand-lg navbar-dark bg-warning">
+		<nav class="navbar navbar-expand-lg navbar-dark">
 			<div class="container-fluid">
 				<a class="navbar-brand fw-bolder custom_font" href="#">FOOD OUARZAZATE</a>
 				<div class="pe-3">
 					<button class="btn p-0 position-relative" id="basket-button">
 						<i class="fa-solid fa-cart-shopping"></i>
-						<span class="position-absolute top-0 start-100 translate-middle badge badge-sm rounded-pill bg-danger d-none" id="basket-badge">
+						<span class="position-absolute top-0 start-100 translate-middle badge badge-sm rounded-pill bg-warning d-none" id="basket-badge">
 							<span class="visually-hidden">unread messages</span>
 						</span>
 					</button>
@@ -38,12 +43,24 @@
 			</div>
 		</nav>
 
-		<main>
+		<section class="hero_section">
+			<h1 class="custom_font">FOOD OUARZAZATE</h1>
+			<p>Order your favorite meals online</p>
+			<!-- 
+			<div class="">
+				<img src= "./images/2.png" alt="">
+			</div> -->
+		</section>
+
+		<!-- ------------------------------ <main> -------------------------------- -->
+		<main class="my-4">
 			<div class="food_section">
 				<div class="heading_container heading_center text-center">
 					<h2>Our Menu</h2>
 				</div>
-
+				<div class="d-flex justify-content-center">
+					<hr class="divider w-75">
+				</div>
 				<ul class="filters_menu" id="filters_menu">
 					<li class="active" data-filter="*">All</li>
 				</ul>

@@ -137,7 +137,7 @@ const createNewMenuItem = (meal) => {
                     <h5 class="card-title">${meal.name}</h5>
                 </div>
                 <div class="btn-group btn_add_to_basket" onclick="addToBasket('${meal.name}', ${meal.price}, '${image_path}', event)">
-                    <button class="btn btn-outline-warning icon"><i class="fas fa-shopping-cart"></i></button>
+                    <button class="btn btn-outline-warning btn-icon"><i class="fas fa-shopping-cart"></i></button>
                     <button type="button" class="btn btn-outline-secondary btn-price">${meal.price} DH</button>
                 </div>
             `;
