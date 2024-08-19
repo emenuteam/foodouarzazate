@@ -89,8 +89,8 @@ $(() => {
         console.log(categoryFood);
 
         // append the new menu
-        categoryFood.forEach(food => {
-            createNewMenuItem(food);
+        categoryFood.forEach((food, index) => {
+            createNewMenuItem(food, index);
         });
 
 
@@ -117,7 +117,7 @@ function capitalizeAndUppercaseSecond(word) {
 }
 
 
-const createNewMenuItem = (meal) => {
+const createNewMenuItem = (meal, index) => {
     // check if the meal is already in the basket
     const existingItem = basket.find(item => item.name === meal.name);
     
@@ -125,7 +125,7 @@ const createNewMenuItem = (meal) => {
     mealDiv.classList.add('meal', 'd-flex', 'flex-column', 'justify-content-between', 'align-items-center', 'gap-2');
     
     if (existingItem) {
-        mealDiv.classList.add('active');
+        mealDiv.classList.add('active', 'animate__animated', 'animate__fadeInUp');
     }
 
     let image_path = './images/' + meal.category.split('_').join('').toUpperCase() + '/' + meal.image;
@@ -146,6 +146,7 @@ const createNewMenuItem = (meal) => {
         mealDiv.querySelector('.btn-group').classList.add('active');
     }
     mealSection.appendChild(mealDiv);
+    $(mealDiv).hide().delay(index * 200).fadeIn(400);
 };
 
 // Beef, Chicken, Dessert, Lamb, Pasta, Pork, Seafood, Side, Starter, Vegan, Vegetarian
@@ -164,8 +165,8 @@ uniqueCategories.forEach(category => {
 
 // append meals
 const showMenuItems = () => {
-    menu.forEach(meal => {
-        createNewMenuItem(meal);
+    menu.forEach((meal, index) => {
+        createNewMenuItem(meal, index);
     });
 };
 

@@ -21,13 +21,13 @@
 	</head>
 	<body>
 		<!-- ------------------------------ <header> ------------------------------- -->
-		<nav class="navbar navbar-expand-lg navbar-dark bg-warning">
+		<nav class="navbar navbar-expand-lg navbar-dark">
 			<div class="container-fluid">
 				<a class="navbar-brand fw-bolder custom_font" href="#">FOOD OUARZAZATE</a>
 				<div class="pe-3">
 					<button class="btn p-0 position-relative" id="basket-button">
 						<i class="fa-solid fa-cart-shopping"></i>
-						<span class="position-absolute top-0 start-100 translate-middle badge badge-sm rounded-pill bg-danger d-none" id="basket-badge">
+						<span class="position-absolute top-0 start-100 translate-middle badge badge-sm rounded-pill bg-warning d-none" id="basket-badge">
 							<span class="visually-hidden">unread messages</span>
 						</span>
 					</button>
@@ -35,17 +35,17 @@
 			</div>
 		</nav>
 		
-		<main>
+		<main class="basket_menu">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 offset-md-2">
 						<div class="d-flex justify-content-between align-content-center align-items-center align-middle gap-4 mt-2 mb-3">
 							<div class="d-flex align-content-center align-items-center align-middle gap-4">
 								<button id="back-button" class="btn btn-sm btn-warning text-light fw-bold">Back</button>
-								<h2 class="m-0">Your Basket</h2>
+								<h2 class="m-0 basket_title">Your Basket</h2>
 							</div>
 							<div class="">
-								<h5 class="p-0 m-0">Total: <span id="price_total" class="fw-bold">0</span></h5>
+								<h5 class="p-0 m-0 basket_total">Total: <span id="price_total" class="fw-bold">0</span></h5>
 							</div>
 						</div>
 						<ul id="basket-list" class="list-group">

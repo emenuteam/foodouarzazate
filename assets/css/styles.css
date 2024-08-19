@@ -1,35 +1,25 @@
 /* styles.css */
 :root {
-    --primary-color: #ff0000;
+    /* --primary-color: #ff0000;
     --primary-light-color: #a74b00;
     --secondary-color: #fff;
-    --yellow-color: #ffe600;
+    --yellow-color: #ffe600; */
     --font-family: "Poppins", sans-serif;
     --header-footer-padding: 1em;
-}
 
-.btn-danger {
-    background-color: #ff0000 !important;
-    border-color: #ff0000 !important;
-    color: #fff !important;
-}
+    --primary-dark: #1C1C1C;
+    --primary-light: #F7F7F7;
+    --accent-yellow: #FFC107;
+    --highlight-red: #D32F2F;
+    --text-light: #FFFFFF;
+    --text-dark: #333333;
+    --border-light: #CCCCCC;
+    --border-dark: #333333;
+    --button-hover-yellow: #E0A800;
+    --button-hover-red: #B71C1C;
+    --shadow-dark: rgba(0, 0, 0, 0.5);
+    --shadow-light: rgba(0, 0, 0, 0.15);
 
-.btn-secondary {
-    background-color: #ff0000 !important;
-    border-color: #ff0000 !important;
-    color: #fff !important;
-}
-
-.btn-outline-secondary {
-    /* background-color: #ff0000 !important; */
-    border-color: #ff0000 !important;
-    color: #ff0000 !important;
-}
-
-.btn-outline-secondary:hover {
-    background-color: var(--yellow-color) !important;
-    border-color: var(--yellow-color) !important;
-    color: #ff0000 !important;
 }
 
 body {
@@ -41,30 +31,26 @@ body {
     min-height: 100vh;
 }
 
-header,
-footer {
-    background-color: var(--primary-color);
-    /* Yellow */
-    color: var(--secondary-color);
-    text-align: center;
-    padding: 1em;
-}
-
 nav {
     position: fixed;
     width: 100%;
     z-index: 3;
-    background-color: var(--primary-color);
+    background-color: var(--highlight-red);
 
     .navbar-brand {
         font-size: 1.3rem;
         font-weight: 700;
-        color: var(--secondary-color);
+        color: var(--primary-light);
     }
 }
 
 nav [class^="fa"] {
-    color: var(--secondary-color);
+    color: var(--primary-light);
+}
+
+.navbar {
+    position: fixed;
+    width: 100%;
 }
 
 main {
@@ -81,7 +67,7 @@ main {
 }
 
 .meal {
-    background-color: var(--secondary-color);
+    background-color: var(--primary-light);
     border: 1px solid #ddd;
     border-radius: 10px;
     padding: 1em;
@@ -92,9 +78,9 @@ main {
 }
 
 .meal.active {
-    background-color: var(--primary-color)6b;
+    background-color: var(--primary-color);
     /* Change to your desired hover color */
-    border-color: var(--primary-color)6b;
+    border-color: var(--primary-color);
     /* Change to your desired hover color */
     /* color: var(--secondary-color); */
     /* Change text color if needed */
@@ -139,6 +125,11 @@ main {
     }
 }
 
+#basket-badge {
+    /* background-color: #9c2929 !important; */
+    background-color: var(--button-hover-red) !important;
+}
+
 #basket-list {
     list-style-type: none;
     padding: 0;
@@ -161,12 +152,17 @@ main {
     justify-content: space-between;
     align-content: center;
     align-items: center;
+
+    button {
+        color: var(--primary-light) !important;
+    }
 }
 
 .basket-item button {
-    background-color: #ff6c00e5;
+    /* background-color: #ff6c00e5; */
+    background-color: var(--highlight-red);
     border: none;
-    color: var(--secondary-color);
+    color: var(--primary-light);
     padding: 0.5em;
     cursor: pointer;
 }
@@ -234,43 +230,51 @@ main {
 
 .food_section .filters_menu li.active {
     background-color: #222831;
-    color: var(--secondary-color);
+    color: var(--primary-light);
+}
+
+.btn-group .btn-icon {
+    /* background-color: var(--accent-yellow) !important; */
+    border-color: var(--accent-yellow) !important;
+    color: var(--accent-yellow) !important;
+}
+
+.btn-group .btn-price {
+    /* background-color: var(--highlight-red) !important; */
+    border-color: var(--highlight-red) !important;
+    color: var(--button-hover-red);
 }
 
 .btn-group:hover .btn-icon {
-    background-color: var(--primary-color);
-    /* Change to your desired hover color */
-    border-color: var(--primary-color);
-    /* Change to your desired hover color */
-    color: var(--secondary-color);
-    /* Change text color if needed */
+    background-color: var(--button-hover-yellow) !important;
+    border-color: var(--accent-yellow) !important;
+    color: var(--primary-light) !important;
 }
 
 .btn-group:hover .btn-price {
-    background-color: #fbff00;
-    border-color: #fbff00 !important;
-    color: var(--secondary-color);
+    background-color: var(--highlight-red) !important;
+    border-color: var(--button-hover-red) !important;
+    color: var(--primary-light) !important;
 }
 
 .btn-group.active .btn {
-    background-color: var(--primary-color);
-    border-color: var(--primary-color);
-    color: var(--secondary-color);
+    background-color: var(--button-hover-yellow) !important;
+    border-color: var(--accent-yellow) !important;
+    color: var(--primary-light) !important;
 }
 
 .btn-group.active .btn-price {
-    background-color: #fbff00;
-    border-color: #fbff00 !important;
-    color: var(--secondary-color);
+    background-color: var(--highlight-red) !important;
+    border-color: var(--button-hover-red) !important;
+    color: var(--primary-light) !important;
 }
 
 @media (max-width: 375px) {
     li.basket-item {
 
-        /* .menu_item_counter {
-            width: 40%;
-            justify-content: center;
-        } */
+        .menu_item_counter {
+            width: 30px !important;
+        }
 
         &>div:nth-child(1) {
             display: flex;
@@ -335,6 +339,7 @@ main {
 }
 
 @media (max-width: 600px) {
+
     .food_section .filters_menu {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -348,6 +353,7 @@ main {
         width: 100%;
         font-size: 1rem;
     }
+
 }
 
 /* cusotmize the scroll bar color */
@@ -366,6 +372,13 @@ main {
     background-color: rgb(255, 204, 0);
     /* Color of the scrollbar handle on hover */
 }
+
+@media (max-width: 600px) {
+    .os-scrollbar-handle {
+        display: none;
+    }
+}
+
 
 .scroll-to-top {
     position: fixed;
@@ -403,7 +416,7 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: var(--primary-light);
     /* Text color */
     text-align: center;
     position: relative;
@@ -441,7 +454,7 @@ main {
 
 @media (max-width: 700px) {
     .hero_section h1 {
-        font-size: 2em;
+        font-size: 1.8em;
     }
 
     .hero_section p {
@@ -454,7 +467,159 @@ main {
         }
     }
 
-        .navbar-brand {
-            font-size: 1rem;
+    .navbar-brand {
+        font-size: 1rem !important;
+    }
+}
+
+
+/* --------------------------------- footer --------------------------------- */
+footer {
+    background: var(--primary-dark);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    padding: 20px 0;
+
+    /* divider */
+    hr {
+        border-color: var(--primary-light) !important;
+    }
+
+    p {
+        color: var(--primary-light);
+        font-size: 0.9rem;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.reach-out {
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: center;
+    color: var(--primary-light);
+    gap: 21px;
+
+
+    p {
+        color: var(--primary-light);
+    }
+
+    &>* {
+        display: flex;
+        flex-basis: calc(33.333% - 14px);
+        flex-grow: 1;
+        flex-shrink: 1;
+        align-content: center;
+        align-items: start;
+        justify-content: center;
+        gap: 6px;
+        box-sizing: border-box;
+    }
+
+    h3,
+    p {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    h3 {
+        font-size: 1.1rem;
+        font-weight: 400;
+        color: var(--highlight-red);
+    }
+
+    p {
+        font-size: 0.8rem;
+        font-weight: 300;
+
+        a {
+            text-decoration: none;
+            color: var(--primary-light);
         }
+    }
+
+    i {
+        font-size: 1.6rem;
+        color: var(--highlight-red);
+    }
+
+}
+
+/* Media query for phone view */
+@media (max-width: 370px) {
+    footer {
+        .reach-out {
+            padding: 0 20px;
+            flex-direction: column;
+            justify-content: start !important;
+            align-content: start !important;
+            align-items: start;
+
+            &>* {
+                h3 {
+                    font-size: 0.9rem;
+                    font-weight: 600;
+                }
+
+                p {
+                    font-size: 0.7rem;
+                }
+
+                i {
+                    font-size: 1.2rem;
+                }
+            }
+        }
+
+        p {
+            font-size: 0.7rem;
+            padding: 0 30px;
+        }
+    }
+}
+
+/* ------------------------------ basket style ------------------------------ */
+.basket_menu {
+    margin-top: 60px;
+
+    #back-button {
+        background-color: var(--highlight-red);
+        border-color: var(--highlight-red);
+        color: var(--primary-light);
+
+        &:hover {
+            background-color: var(--button-hover-red);
+            border-color: var(--button-hover-red);
+        }
+    }
+
+    #checkout-button {
+        background-color: var(--accent-yellow);
+        border-color: var(--accent-yellow);
+        color: var(--primary-light);
+
+        &:hover {
+            background-color: var(--button-hover-yellow);
+            border-color: var(--button-hover-yellow);
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    .basket_menu {
+        margin-top: 50px;
+
+        .basket_title {
+            font-size: 1.4rem;
+            font-weight: 400;
+        }
+    }
+
+
 }
