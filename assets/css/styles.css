@@ -171,6 +171,10 @@ main {
     color: var(--primary-light);
     padding: 0.5em;
     cursor: pointer;
+
+    &:hover {
+        background-color: var(--button-hover-red);
+    }
 }
 
 .basket-item input {
@@ -588,11 +592,16 @@ footer {
             padding: 0 30px;
         }
     }
+
+        li.basket-item input{
+            width: 37px !important;
+        }
 }
 
 /* ------------------------------ basket style ------------------------------ */
 .basket_menu {
-    margin-top: 60px;
+    padding: 60px 0;
+    color: var(--primary-light);
 
     #back-button {
         background-color: var(--highlight-red);
@@ -606,20 +615,19 @@ footer {
     }
 
     #checkout-button {
-        background-color: var(--accent-yellow);
-        border-color: var(--accent-yellow);
+        background-color: var(--highlight-red);
+        border-color: var(--highlight-red);
         color: var(--primary-light);
 
         &:hover {
-            background-color: var(--button-hover-yellow);
-            border-color: var(--button-hover-yellow);
+            background-color: var(--button-hover-red);
+            border-color: var(--button-hover-red);
         }
     }
 }
 
 @media (max-width: 700px) {
     .basket_menu {
-        margin-top: 50px;
 
         .basket_title {
             font-size: 1.4rem;

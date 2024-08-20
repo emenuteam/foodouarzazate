@@ -120,12 +120,14 @@ function capitalizeAndUppercaseSecond(word) {
 const createNewMenuItem = (meal, index) => {
     // check if the meal is already in the basket
     const existingItem = basket.find(item => item.name === meal.name);
-    
+
     const mealDiv = document.createElement('div');
     mealDiv.classList.add('meal', 'd-flex', 'flex-column', 'justify-content-between', 'align-items-center', 'gap-2');
-    
+
     if (existingItem) {
-        mealDiv.classList.add('active', 'animate__animated', 'animate__fadeInUp');
+        mealDiv.classList.add('active');
+        // mealDiv.classList.add('animate__animated', 'animate__fadeIn');
+
     }
 
     let image_path = './images/' + meal.category.split('_').join('').toUpperCase() + '/' + meal.image;
@@ -141,12 +143,26 @@ const createNewMenuItem = (meal, index) => {
                     <button type="button" class="btn btn-outline-secondary btn-price">${meal.price} DH</button>
                 </div>
             `;
-    // create the meal div
+
     if (existingItem) {
         mealDiv.querySelector('.btn-group').classList.add('active');
+
     }
+
+    mealDiv.style.transform = 'translateY(-200px)';
+    mealDiv.style.opacity = 0;
+    mealDiv.style.margin = '10px 0';
+
     mealSection.appendChild(mealDiv);
-    $(mealDiv).hide().delay(index * 200).fadeIn(400);
+
+    gsap.to(mealDiv, {
+        opacity: 1,
+        y: 0,
+        duration: 0.4,
+        ease: 'power2.out',
+        delay: index * 0.1
+    });
+    // $(mealDiv).hide().delay(index * 200).fadeIn(400);
 };
 
 // Beef, Chicken, Dessert, Lamb, Pasta, Pork, Seafood, Side, Starter, Vegan, Vegetarian
@@ -179,16 +195,16 @@ function addToBasket(name, price, image, e) {
     const existingItem = basket.find(item => item.name === name);
     const btnGroup = e.currentTarget;
     console.log(btnGroup.parent);
-    
+
 
     if (!existingItem) {
         // existingItem.quantity++;
         basket.push({ name, price, quantity: 1, image });
-    
+
         // add the active class to the basket button parent
         btnGroup.classList.add('active');
         btnGroup.parentElement.classList.add('active');
-    }else {
+    } else {
         basket = basket.filter(item => item.name !== name);
         // remove the active class to the basket button parent
         btnGroup.classList.remove('active');
