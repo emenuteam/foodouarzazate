@@ -412,7 +412,7 @@ main {
 
 /* ------------------------------------ / ----------------------------------- */
 .hero_section {
-    background-image: url('/images/2.png');
+    background-image: url('./../../images/2.png');
     background-size: cover;
     background-position: center;
     height: 100vh;
