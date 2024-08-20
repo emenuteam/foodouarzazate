@@ -1,5 +1,5 @@
 
-/* const menu = [
+const menu = [
     { name: "Shawarma Normal", price: "25", category: "shawarma", image: "1.jpg" },
     { name: "Shawarma Fromage", price: "30", category: "shawarma", image: "2.jpg" },
     { name: "Tacos Shawarma", price: "35", category: "shawarma", image: "3.jpg" },
@@ -64,9 +64,7 @@
     { name: "Aquafina", price: "5", category: "beverage", image: "6.jpeg" },
 
 ];
- */
 
-const menu = [];
 // get the menu section
 const mealSection = document.getElementById('meal-section');
 let basket = JSON.parse(localStorage.getItem('basket')) || [];
