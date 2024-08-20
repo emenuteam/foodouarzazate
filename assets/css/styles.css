@@ -75,7 +75,7 @@ main {
     padding: 1em;
     text-align: center;
     width: 100%;
-    
+
     .card-title {
         font-size: 1.2rem;
         font-weight: 400;
@@ -145,7 +145,7 @@ main {
     width: 40px !important;
 }
 
-.basket-item div{
+.basket-item div {
     border-color: var(--border-light) !important;
 }
 
@@ -393,8 +393,7 @@ main {
     display: none;
     font-size: 1.2rem;
     /*Hiddenbydefault*/
-    background-color: var(--primary-color);
-    color: rgb(0, 0, 0);
+    background-color: var(--button-hover-red);
     border: block;
     color: rgb(255, 255, 255);
     padding: 10px;
@@ -500,65 +499,103 @@ footer {
         margin: 0;
         padding: 0;
     }
-}
 
-.reach-out {
-    padding: 10px 0;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    align-content: center;
-    color: var(--primary-light);
-    gap: 21px;
-
-
-    p {
-        color: var(--primary-light);
-    }
-
-    &>* {
+    .reach-out {
+        padding: 10px 0;
         display: flex;
-        flex-basis: calc(33.333% - 14px);
-        flex-grow: 1;
-        flex-shrink: 1;
-        align-content: center;
-        align-items: start;
         justify-content: center;
-        gap: 6px;
-        box-sizing: border-box;
-    }
+        flex-wrap: wrap;
+        align-content: center;
+        color: var(--primary-light);
+        gap: 21px;
 
-    h3,
-    p {
-        margin: 0 !important;
-        padding: 0 !important;
-    }
 
-    h3 {
-        font-size: 1.1rem;
-        font-weight: 400;
-        color: var(--highlight-red);
-    }
-
-    p {
-        font-size: 0.8rem;
-        font-weight: 300;
-
-        a {
-            text-decoration: none;
+        p {
             color: var(--primary-light);
         }
+
+        &>* {
+            display: flex;
+            flex-basis: calc(33.333% - 14px);
+            flex-grow: 1;
+            flex-shrink: 1;
+            align-content: center;
+            align-items: start;
+            justify-content: center;
+            gap: 6px;
+            box-sizing: border-box;
+        }
+
+        h3,
+        p {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: var(--highlight-red);
+        }
+
+        p {
+            font-size: 0.8rem;
+            font-weight: 300;
+
+            a {
+                text-decoration: none;
+                color: var(--primary-light);
+            }
+        }
+
+        i {
+            font-size: 1.6rem;
+            color: var(--highlight-red);
+        }
+
+        ul {
+            padding: 0 3px;
+            list-style: inside;
+            font-size: 0.8rem;
+            font-weight: 400;
+        }
+
     }
 
-    i {
-        font-size: 1.6rem;
-        color: var(--highlight-red);
-    }
+    .social-media {
+        display: flex;
+        justify-content: center;
+        align-items: baseline;
+        width: 100%;
+        gap: 10px;
 
+        h4 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: var(--primary-light);
+        }
+
+        .link {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+
+            &>* {
+                text-decoration: none;
+                font-size: 1.4rem;
+                color: var(--highlight-red);
+
+                &:hover {
+                    color: var(--button-hover-red);
+                }
+            }
+        }
+    }
 }
 
+
 /* Media query for phone view */
-@media (max-width: 390px) {
+@media (max-width: 415px) {
     footer {
         .reach-out {
             padding: 0 20px;
@@ -587,11 +624,26 @@ footer {
             font-size: 0.7rem;
             padding: 0 30px;
         }
+
+        .social-media {
+            justify-content: start;
+            padding: 10px 20px 0 20px;
+    
+            &>* {
+                font-size: 1.1rem;
+            }
+    
+            h4 {
+                font-size: .9rem;
+            }
+    
+        }
     }
 
-        li.basket-item input{
-            width: 37px !important;
-        }
+    li.basket-item input {
+        width: 37px !important;
+    }
+
 }
 
 /* ------------------------------ basket style ------------------------------ */
