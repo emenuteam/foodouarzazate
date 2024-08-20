@@ -7,14 +7,15 @@
     --font-family: "Poppins", sans-serif;
     --header-footer-padding: 1em;
 
-    --primary-dark: #1C1C1C;
+    --primary-dark: #17171736;
     --primary-light: #F7F7F7;
     --accent-yellow: #FFC107;
     --highlight-red: #D32F2F;
     --text-light: #FFFFFF;
     --text-dark: #333333;
     --border-light: #CCCCCC;
-    --border-dark: #333333;
+    --border-dark: #292828;
+    --footer-dark: #1C1C1C;
     --button-hover-yellow: #E0A800;
     --button-hover-red: #B71C1C;
     --shadow-dark: rgba(0, 0, 0, 0.5);
@@ -55,7 +56,8 @@ nav [class^="fa"] {
 
 main {
     flex: 1;
-    /* padding: 1em; */
+    background: #222020;
+    padding: 20px 0;
 }
 
 
@@ -67,20 +69,24 @@ main {
 }
 
 .meal {
-    background-color: var(--primary-light);
-    border: 1px solid #ddd;
+    background-color: var(--border-dark);
+    border: 1px solid var(--border-light);
     border-radius: 10px;
     padding: 1em;
     text-align: center;
     width: 100%;
-    /* width: 30%;
-    max-width: 200px; */
+    
+    .card-title {
+        font-size: 1.2rem;
+        font-weight: 400;
+        color: var(--primary-light);
+    }
 }
 
 .meal.active {
-    background-color: var(--primary-color);
+    background-color: var(--primary-dark);
     /* Change to your desired hover color */
-    border-color: var(--primary-color);
+    /* border-color: var(--primary-color); */
     /* Change to your desired hover color */
     /* color: var(--secondary-color); */
     /* Change text color if needed */
@@ -187,12 +193,12 @@ main {
 
 .food_section {
     box-sizing: border-box;
+    color: var(--primary-light);
 }
 
 .food_section h2 {
     font-family: 'Dancing Script', cursive;
     font-size: 2.5rem;
-    color: #222831;
     text-align: center;
     font-weight: 900;
 }
@@ -225,11 +231,11 @@ main {
 
 
 .food_section .filters_menu li:hover {
-    border: 2px solid #222831;
+    border: 2px solid var(--button-hover-red);
 }
 
 .food_section .filters_menu li.active {
-    background-color: #222831;
+    background-color: var(--highlight-red);
     color: var(--primary-light);
 }
 
@@ -364,12 +370,12 @@ main {
 }
 
 .os-scrollbar-handle {
-    background: rgb(255, 226, 110);
+    background: rgba(68, 68, 68, 0.534);
     ;
 }
 
 .os-scrollbar-handle:hover {
-    background-color: rgb(255, 204, 0);
+    background-color: var(--button-hover-red);
     /* Color of the scrollbar handle on hover */
 }
 
@@ -475,7 +481,7 @@ main {
 
 /* --------------------------------- footer --------------------------------- */
 footer {
-    background: var(--primary-dark);
+    background: var(--footer-dark);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -552,7 +558,7 @@ footer {
 }
 
 /* Media query for phone view */
-@media (max-width: 370px) {
+@media (max-width: 390px) {
     footer {
         .reach-out {
             padding: 0 20px;
