@@ -248,7 +248,7 @@ main {
 .btn-group .btn-price {
     /* background-color: var(--highlight-red) !important; */
     border-color: var(--highlight-red) !important;
-    color: var(--button-hover-red);
+    color: var(--text-light);
 }
 
 .btn-group:hover .btn-icon {
