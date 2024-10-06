@@ -1,0 +1,120 @@
+.content {
+    width: 100%;
+    gap: 20px;
+}
+
+.category-form {
+    width: 30% !important;
+    background-color: #fff;
+    padding:28.5px 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+    & h4 {
+        position: relative;
+        top: -15px;
+        color: rgb(78, 78, 78);
+        font-size: 20px;
+        font-weight: 600;
+        padding: 0px 5px;
+
+
+    }
+
+    .update-add-category-btn{
+        gap: 20px;
+    }
+}
+
+
+.categories {
+    width: 70%;
+    background-color: #fff;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-height: 85vh; 
+    overflow: hidden;
+    
+    & h4{
+        width: 100%;
+        text-align: start;
+        padding: 0px 10px;
+        color: rgb(78, 78, 78);
+        font-size: 20px;
+        font-weight: 600;
+
+    }
+
+    .table-striped tbody {
+        display: block; 
+        max-height: calc(85vh - 100px); 
+        overflow-y: auto; 
+        width: 100%; 
+
+        &::-webkit-scrollbar {
+            width: 5px;
+        }
+        
+        &::-webkit-scrollbar-track {
+            background: #ffffff;
+        }
+        
+        &::-webkit-scrollbar-thumb {
+            background-color: #bdbdbd;
+            border-radius: 6px;
+        }
+        
+        &::-webkit-scrollbar-thumb:hover {
+            background: #8b8b8b;
+        }
+        
+    }
+    
+    .table-striped thead,
+    .table-striped tbody tr {
+        display: table; 
+        width: 100%; 
+        table-layout: fixed; 
+    }
+ 
+}
+
+
+.category-table {
+    border: 1px solid;
+    border-collapse: collapse;
+}
+
+.delete-btn {
+    padding: 4px 6px !important;
+
+   & i{
+    color: rgb(255, 24, 24) ;
+    font-size: 16px;
+   }
+
+    &:hover {
+        background-color: rgb(255, 24, 24);
+        border-color: rgb(255, 24, 24);
+        
+        & i{
+            color: white;
+        }
+    }
+}
+.modify-btn {
+    padding: 4px 6px !important;
+
+    & i{
+     color: rgb(28, 24, 255);
+     font-size: 16px;
+    }
+ 
+     &:hover {
+         background-color: rgb(28, 24, 255);
+         border-color: rgb(28, 24, 255);
+         
+         & i{
+             color: white;
+         }
+     }
+ }
