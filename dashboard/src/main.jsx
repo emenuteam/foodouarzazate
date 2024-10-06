@@ -21,7 +21,7 @@ const router = createBrowserRouter([
       },
       
       {
-        path: "/all-categories",
+        path: "/",
         element: <PrivateRoute element={<AllCategories />} />,
       },
       {
