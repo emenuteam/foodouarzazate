@@ -75,14 +75,14 @@ const Aside = ({ isToggled, onToggleSidebar }) => {
       {/* Nav Item - Pages Collapse Menu */}
       <li
         className={`nav-item ${
-          location.pathname === "/all-categories" ? "active" : ""
+          location.pathname === "/" ? "active" : ""
         }`}
       >
         <Link
           className={`nav-link ${
-            location.pathname === "/all-categories" ? "active" : ""
+            location.pathname === "/" ? "active" : ""
           }`}
-          to="/all-categories"
+          to="/"
         >
           <i className="fa-solid fa-layer-group"></i>
           <span>Categories</span>
