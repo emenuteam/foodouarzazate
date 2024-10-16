@@ -98,6 +98,12 @@ const createNewMenuItem = (meal, index) => {
 
     if (existingItem) {
         mealDiv.querySelector('.btn-group').classList.add('active');
+        mealDiv.querySelector('.btn-group .btn-icon i').classList.remove('fas', 'fa-shopping-cart');
+        mealDiv.querySelector('.btn-group .btn-icon i').classList.add('bi', 'bi-trash3-fill');
+    }else{
+        mealDiv.querySelector('.btn-group').classList.remove('active');
+        mealDiv.querySelector('.btn-group .btn-icon i').classList.add('fas', 'fa-shopping-cart');
+        mealDiv.querySelector('.btn-group .btn-icon i').classList.remove('bi', 'bi-trash3-fill');
     }
 
     mealDiv.style.transform = 'translateY(-200px)';
@@ -132,15 +138,21 @@ function capitalizeAndUppercaseSecond(word) {
 function addToBasket(name, price, image, e) {
     const existingItem = basket.find(item => item.name === name);
     const btnGroup = e.currentTarget;
+    const iconElement = btnGroup.querySelector('i');
 
     if (!existingItem) {
         basket.push({ name, price, quantity: 1, image });
         btnGroup.classList.add('active');
         btnGroup.parentElement.classList.add('active');
+        iconElement.classList.remove('fas', 'fa-shopping-cart');
+        iconElement.classList.add('bi', 'bi-trash3-fill');
+
     } else {
         basket = basket.filter(item => item.name !== name);
         btnGroup.classList.remove('active');
         btnGroup.parentElement.classList.remove('active');
+        iconElement.classList.remove('bi', 'bi-trash3-fill');
+        iconElement.classList.add('fas', 'fa-shopping-cart');
     }
 
     localStorage.setItem('basket', JSON.stringify(basket));
