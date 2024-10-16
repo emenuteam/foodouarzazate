@@ -3,10 +3,10 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>FOOD TANGER</title>
+		<title id="pageTitle">Restaurant</title>
 
 		<!-- favicon -->
-		<link rel="icon" href="./favicon.png" type="image/x-icon" />
+		<link id="favicon" rel="icon" href="./images/logo.png" type="image/x-icon" />
 		<!-- ---------------------------- google fonts ----------------------------- -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,6 +17,7 @@
 
 		<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
 		<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
 		<!-- ------------------------------- styles -------------------------------- -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -25,6 +26,7 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 		<link rel="stylesheet" href="./assets/css/styles.css" />
+		<link rel="stylesheet" href="./assets/css/style.css" />
 		<!-- ------------------------------- scripts ------------------------------- -->
 		<!-- jquery -->
 		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -35,7 +37,9 @@
 		<!-- ------------------------------ <header> ------------------------------- -->
 		<nav class="navbar navbar-expand-lg navbar-dark">
 			<div class="container-fluid">
-				<a class="navbar-brand fw-bolder custom_font" href="#">FOOD TANGER</a>
+				<a class="navbar-brand fw-bolder custom_font" href="index.html">
+					<img class="navbar-logo" src="./images/logo.png" alt="Restaurant Logo" >
+				 </a>
 				<div class="pe-3">
 					<a href="basket.html" class="btn p-0 position-relative" id="basket-button">
 						<i class="fa-solid fa-cart-shopping"></i>
@@ -47,10 +51,12 @@
 			</div>
 		</nav>
 
-		<section class="hero_section">
-			<h1 class="custom_font">FOOD TANGER</h1>
-			<p>Order your favorite meals online</p>
-		</section>
+		<header id="header">
+			<div class="header-content">
+				<h1 id="restaurantName">Restaurant Name</h1>
+				<p id="restaurantSubheading">Find all your favorite meals</p>
+			</div>
+		</header>
 
 		<!-- ------------------------------ <main> -------------------------------- -->
 		<main>
@@ -61,9 +67,9 @@
 				<div class="d-flex justify-content-center">
 					<hr class="divider w-75" />
 				</div>
-				<ul class="filters_menu" id="filters_menu">
+				<div class="filters_menu" id="filters_menu">
 					<li class="active" data-filter="*">All</li>
-				</ul>
+				</div>
 			</div>
 			<section id="meal-section" class="container">
 				<!-- Meals will be inserted here by JavaScript -->
@@ -73,53 +79,33 @@
 			<i id="scrollToTopBtn" class="fa-solid fa-chevron-up scroll-to-top"></i>
 		</main>
 
-		<footer>
-			<div class="reach-out container">
-				<div class="location">
-					<i class="fa-solid fa-location-dot"></i>
-					<div class="txt">
-						<h3>Find us</h3>
-						<ul>
-							<li>4 Angle Rue Annaba Et Rue Omar El Kindi Bourgogne, Tangier,Morocco</li>
-							
-						</ul>
-					</div>
-				</div>
-				<div class="phone">
-					<i class="fa-solid fa-phone-volume"></i>
-					<div class="txt">
-						<h3>Call us</h3>
-						<p><a href="tel:+212600859632">0600859632</a></p>
-					</div>
-				</div>
-				<div class="email">
-					<i class="fa-solid fa-envelope"></i>
-					<div class="txt">
-						<h3>Mail us</h3>
-						<p><a href="mailto:food-tanger@gmail.com"></a>food-tanger@gmail.com</p>
-					</div>
-				</div>
-			</div>
-			<div class="social-media">
-				<h4>Follow us</h4>
-				<div class="link">
-					<a href="https://www.facebook.com/FOOD.TANGER" target="_blank" class="fa-brands fa-facebook"></a>
-					<a href="https://www.instagram.com/food.TANGER/" target="_blank" class="fa-brands fa-instagram"></a>
-					<!-- <a href="https://www.twitter.com/emenuteam" target="_blank" class="fa-brands fa-twitter"></a> -->
-					<!-- <a href="https://www.linkedin.com/emenuteam" target="_blank" class="fa-brands fa-linkedin"></a> -->
-				</div>
-			</div>
-			<hr class="divider w-75" />
-			<div class="text-center">
-				<p>
-					Copyright 
-					<script>
-						document.write(new Date().getFullYear());
-					</script>
-					, All Right Reserved <a href="https://www.emenuteam.top" class="text-danger fw-bold" style="text-decoration: none">Emenuteam</a>
-				</p>
-			</div>
-		</footer>
+	<!-- Footer Section -->
+<footer>
+    <div class="footer-content">
+        <div class="footer-section address">
+            <h3>Our Address</h3>
+            <p><i class="bi bi-geo-alt-fill"></i> <span id="footerAddress">123 Main Street, Casablanca, Morocco</span></p>
+        </div>
+        <div class="footer-section contact-info">
+            <h3>Contact Us</h3>
+            <div class="contact-info-div">
+                <p><i class="bi bi-envelope-at-fill"></i> <a id="footerEmail" href="mailto:info@restaurant.com">info@restaurant.com</a></p>
+                <p><i class="bi bi-telephone-fill"></i><a id="footerPhone" href="tel:+212612345678">+212 6 12 34 56 78</a></p>
+            </div>
+        </div>
+        <div class="footer-section social-media">
+            <h3>Follow Us</h3>
+          
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; <script>document.write(new Date().getFullYear());</script> 
+            <a href="https://www.emenuteam.top" class="text-danger fw-bold" style="text-decoration: none">Emenuteam</a>. All Rights Reserved.
+        </p>
+    </div>
+</footer>
+
+
 		
 		<!-- ----------------------------------------------------------------------- -->
 		<!--                                 scripts                                 -->
@@ -127,6 +113,7 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js" integrity="sha512-7Pi/otdlbbCR+LnW+F7PwFcSDJOuUJB3OxtEHbg4vSMvzvJjde4Po1v4BR9Gdc9aXNUNFVUY+SK51wWT8WF0Gg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 		<script src="./assets/js/main.js"></script>
 		<script src="./assets/js/script.js"></script>
+		<script src="./assets/js/restuinfo.js"></script>
 		<script>
 		</script>
 	</body>

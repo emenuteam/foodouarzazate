@@ -3,15 +3,17 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Basket - emenuteam Meals</title>
+		<title>Cart</title>
 
 		<!-- favicon -->
-		<link rel="icon" href="./favicon.png" type="image/x-icon" />
+		<link id="favicon" rel="icon" href="./images/logo.png" type="image/x-icon" />
 		<!-- ------------------------------- styles -------------------------------- -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/2.10.0/styles/overlayscrollbars.min.css" integrity="sha512-LJPmNwX2gc0MasqB7LmhaaAdEcB484xA8STRs2Bke2qTDxl1hqKk6xbRxa4SnktZaBkS42IManLbrjXONu7LPQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 		<link rel="stylesheet" href="./assets/css/styles.css" />
+		<link rel="stylesheet" href="./assets/css/style.css" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
 		<!-- ------------------------------- scripts ------------------------------- -->
 		<!-- jquery -->
@@ -23,7 +25,7 @@
 		<!-- ------------------------------ <header> ------------------------------- -->
 		<nav class="navbar navbar-expand-lg navbar-dark">
 			<div class="container-fluid">
-				<a class="navbar-brand fw-bolder custom_font" href="index.html">FOOD OUARZAZATE</a>
+				<a class="navbar-brand fw-bolder custom_font" href="index.html"><img class="navbar-logo" src="./images/logo.png" alt="Restaurant Logo" > </a>
 				<div class="pe-3">
 					<button class="btn p-0 position-relative" id="basket-button">
 						<i class="fa-solid fa-cart-shopping"></i>
@@ -38,7 +40,7 @@
 		<main class="basket_menu">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-8 offset-md-2">
+					<div class="col-md-8 offset-md-2 mt-5">
 						<div class="d-flex justify-content-between align-content-center align-items-center align-middle gap-4 mt-2 mb-3">
 							<div class="d-flex align-content-center align-items-center align-middle gap-4">
 								<button id="back-button" class="btn btn-sm btn-warning text-light fw-bold">Back</button>
@@ -62,55 +64,36 @@
 			<i id="scrollToTopBtn" class="fa-solid fa-chevron-up scroll-to-top"></i>
 		</main>
 
-		<footer>
-			<div class="reach-out container">
-				<div class="location">
-					<i class="fa-solid fa-location-dot"></i>
-					<div class="txt">
-						<h3>Find us</h3>
-						<ul>
-							<li>Shawarma FooD: Av Maghreb Arabi en Face résidence el bayaz</li>
-							<li>FooD: En face l’hôpital Sidi dawed</li>
-						</ul>
-					</div>
-				</div>
-				<div class="phone">
-					<i class="fa-solid fa-phone-volume"></i>
-					<div class="txt">
-						<h3>Call us</h3>
-						<p><a href="tel:+212697069317">0697069317</a></p>
-					</div>
-				</div>
-				<div class="email">
-					<i class="fa-solid fa-envelope"></i>
-					<div class="txt">
-						<h3>Mail us</h3>
-						<p><a href="mailto:mediaozte@gmail.com"></a>mediaozte@gmail.com</p>
-					</div>
+	<!-- Footer Section -->
+	<footer>
+		<div class="footer-content">
+			<div class="footer-section address">
+				<h3>Our Address</h3>
+				<p><i class="bi bi-geo-alt-fill"></i> <span id="footerAddress">123 Main Street, Casablanca, Morocco</span></p>
+			</div>
+			<div class="footer-section contact-info">
+				<h3>Contact Us</h3>
+				<div class="contact-info-div">
+					<p><i class="bi bi-envelope-at-fill"></i> <a id="footerEmail" href="mailto:info@restaurant.com">info@restaurant.com</a></p>
+					<p><i class="bi bi-telephone-fill"></i><a id="footerPhone" href="tel:+212612345678">+212 6 12 34 56 78</a></p>
 				</div>
 			</div>
-			<div class="social-media">
-				<h4>Follow us</h4>
-				<div class="link">
-					<a href="https://www.facebook.com/FOOD.Ouarzazate" target="_blank" class="fa-brands fa-facebook"></a>
-					<a href="https://www.instagram.com/food.ouarzazate/" target="_blank" class="fa-brands fa-instagram"></a>
-					<!-- <a href="https://www.twitter.com/emenuteam" target="_blank" class="fa-brands fa-twitter"></a> -->
-					<!-- <a href="https://www.linkedin.com/emenuteam" target="_blank" class="fa-brands fa-linkedin"></a> -->
-				</div>
+			<div class="footer-section social-media">
+				<h3>Follow Us</h3>
+				
 			</div>
-			<hr class="divider w-75" />
-			<div class="text-center">
-				<p>
-					Copyright ©
-					<script>
-						document.write(new Date().getFullYear());
-					</script>
-					, All Right Reserved <a href="https://www.emenuteam.top" class="text-danger fw-bold" style="text-decoration: none">Emenuteam</a>
-				</p>
-			</div>
-		</footer>
-
+		</div>
+		<div class="footer-bottom">
+			<p>&copy; <script>document.write(new Date().getFullYear());</script> 
+				<a href="https://www.emenuteam.top" class="text-danger fw-bold" style="text-decoration: none">Emenuteam</a>. All Rights Reserved.
+			</p>
+		</div>
+	</footer>
+	
+	
 		<!-- ------------------------------- scripts ------------------------------- -->
 		<script src="./assets/js/main.js"></script>
+		<script src="./assets/js/restuinfo.js"></script>
+
 	</body>
 </html>

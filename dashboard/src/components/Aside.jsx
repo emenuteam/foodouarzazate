@@ -106,7 +106,21 @@ const Aside = ({ isToggled, onToggleSidebar }) => {
         </Link>
       </li>
      
-
+      <li
+        className={`nav-item ${
+          location.pathname === "/settings" ? "active" : ""
+        }`}
+      >
+        <Link
+          className={`nav-link ${
+            location.pathname === "/settings" ? "active" : ""
+          }`}
+          to="/settings"
+        >
+          <i className="fa-solid fa-gear"></i>
+          <span>Settings</span>
+        </Link>
+      </li>
       {/* Divider */}
       <hr className="sidebar-divider" />
 

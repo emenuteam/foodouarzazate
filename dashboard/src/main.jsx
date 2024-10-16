@@ -8,7 +8,7 @@ import Signinpage from "./Sign-in-page";
 import PrivateRoute from './PrivateRoute'; 
 import Profile from "./components/Profile";
 import Allowlist from "./components/Allowlist/Allowlist";
-
+import Settings from "./pages/Settings";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -31,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: "profile",
         element: <PrivateRoute element={<Profile />} />
+      },
+      {
+        path: "/settings",
+        element: <PrivateRoute element={<Settings />} />
       },
       {
         path: "admin/sign-in",
