@@ -49,7 +49,11 @@ const Signinpage = () => {
       });
       const token = response.data.token;
       // Store the token in cookies
-      Cookies.set('Pa#Ss#ToK', token, { expires: 1, secure: false, sameSite: 'lax' });
+      Cookies.set('Pa#Ss#ToK', token, { expires: 1/24 * 1, secure: false, sameSite: 'lax' });
+      // Remove the cookie after 1 hours
+      setTimeout(() => {
+        Cookies.remove('Pa#Ss#ToK');
+      }, 1 * 60 * 60 * 1000); // 1 hours in milliseconds 
       navigate('/all-meals');
       window.location.reload();
       setError('');
