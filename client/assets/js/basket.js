@@ -70,6 +70,9 @@ function updateBasket() {
                         <input type="text" class="form-control menu_item_counter" value="${item.quantity}" readonly>
                         <button class="btn btn-outline-secondary" onclick="increaseQuantity(${index})">+</button>
                     </div>
+                    <div class="basket-item-delete">
+                        <button class="btn btn-danger" onclick="deleteItem(${index})"><i class="bi bi-trash3-fill"></i></button>
+                    </div>
                 </div>
             </div>
         `;
@@ -81,7 +84,7 @@ function decreaseQuantity(index) {
     if (basket[index].quantity > 1) {
         basket[index].quantity--;
     } else {
-        basket.splice(index, 1);
+        return;
     }
     localStorage.setItem('basket', JSON.stringify(basket));
 
@@ -95,6 +98,16 @@ function decreaseQuantity(index) {
 function increaseQuantity(index) {
     basket[index].quantity++;
     localStorage.setItem('basket', JSON.stringify(basket));
+    updateBasket();
+    calculateAndUpdateTotalPrice();
+}
+function deleteItem(index) {
+    basket.splice(index, 1);
+    localStorage.setItem('basket', JSON.stringify(basket));
+
+    // update the basket badge
+    const badge = document.getElementById('basket-badge');
+    badge.textContent = basket.length;
     updateBasket();
     calculateAndUpdateTotalPrice();
 }
