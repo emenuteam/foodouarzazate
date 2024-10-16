@@ -1,0 +1,119 @@
+@mixin object-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  $circleSize: 80px;
+  $radius: 100px;
+  $shadow: 0 0 10px 0 rgba(255,255,255,.35);
+  $fontColor: rgb(250,250,250);
+  $costum-f-size: 11px;
+
+
+  .profile-pic {
+    color: transparent;
+    @include object-center;
+    justify-content: start;
+    position: relative;
+    transition: all .3s ease;
+    width: $circleSize;
+
+
+    input {
+      display: none;
+    }
+    
+    img {
+      position: absolute;
+      object-fit: cover;
+      width: $circleSize;
+      height: $circleSize;
+      box-shadow: $shadow;
+      border-radius: $radius;
+      z-index: 0;
+    }
+    
+    .-label {
+      cursor: pointer;
+      height: $circleSize;
+      width: $circleSize;
+      margin-bottom: 0;
+    }
+    
+    &:hover {
+      .-label {
+        @include object-center;
+        background-color: rgba(0,0,0,.8);
+        z-index: 10000;
+        color: $fontColor;
+        transition: background-color .2s ease-in-out;
+        border-radius: $radius;
+        
+      }
+    }
+    
+    span {
+      display: inline-flex;
+      font-size: $costum-f-size;
+    }
+  }
+  
+  .container-settings {
+
+    & form{
+        background-color: #fff;
+        padding:10px 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+        & h4{
+            color: rgb(78, 78, 78);
+        font-size: 20px;
+        font-weight: 600;
+        padding:  5px;
+
+        }
+    }
+  }
+
+  .upload-container {
+    display: flex;
+    align-items: center;
+    gap: 50px; 
+}
+
+.hidden-file-input {
+    display: none; 
+}
+
+.custom-upload-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 41px;
+    padding: 10px 20px;
+    background-color: transparent;
+    color: #424242;
+    border: 2px dashed #696969;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.custom-upload-btn:hover {
+    background-color: #4b4b4b;
+    color: white;
+}
+
+.img-preview {
+    width: 200px; /* Fixed size for image preview */
+    height: 90px;
+    object-fit: cover; /* Make sure the image fits the container */
+    border-radius: 10px;
+    border: none;
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  */
+}

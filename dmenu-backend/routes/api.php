@@ -5,13 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AllowlistController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\ItemController;
 use App\Http\Controllers\MealController;
-use App\Http\Controllers\SaladController;
-use App\Http\Controllers\OrderController;
 use App\Http\Controllers\RestaurantController;
-use App\Http\Controllers\SliderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,9 +42,9 @@ Route::get('/categories/{id}', [CategoryController::class, 'getCategory']);
 Route::put('/categories/{id}', [CategoryController::class, 'updateCategory']);
 Route::delete('/categories/{id}', [CategoryController::class, 'deleteCategory']);
 
-// dashboard routes
-Route::get('/dashboard', [DashboardController::class, 'getDashInfo']);
-
+// restaurant routes
+Route::get('/restaurants', [RestaurantController::class, 'getRestaurants']);
+Route::post('/restaurants', [RestaurantController::class, 'upsertRestaurant']);
 
 // meal routes
 Route::post('/meals', [MealController::class, 'createMeal']);

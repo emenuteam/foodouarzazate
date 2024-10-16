@@ -202,7 +202,7 @@ main {
     text-align: center;
     font-weight: 900;
 }
-
+/* 
 .food_section .filters_menu {
     padding: 0 1rem;
     display: -webkit-box;
@@ -227,7 +227,36 @@ main {
     box-sizing: border-box;
     border: 2px solid transparent;
     text-align: center;
+} */
+
+.food_section .filters_menu {
+    padding: 0 1rem;
+    display: flex;
+    justify-content: center; /* Aligns items to the left */
+    list-style-type: none;
+    margin: 45px 0 20px 0;
+    gap: 10px;
+    box-sizing: border-box;
+    overflow-x: auto; /* Enables horizontal scrolling */
+    white-space: nowrap; /* Prevents items from wrapping to the next line */
+    scrollbar-width: none; /* Hides scrollbar in Firefox */
 }
+
+.food_section .filters_menu::-webkit-scrollbar {
+    display: none; /* Hides scrollbar in Chrome/Safari */
+}
+
+.food_section .filters_menu li {
+    display: inline-block; /* Keeps the list items in a row */
+    padding: 7px 25px;
+    cursor: pointer;
+    border-radius: 25px;
+    box-sizing: border-box;
+    border: 2px solid transparent;
+    text-align: center;
+    white-space: nowrap; /* Ensures text doesn't wrap */
+}
+
 
 
 .food_section .filters_menu li:hover {
@@ -331,13 +360,29 @@ main {
 
 @media (max-width: 411px) {
     .food_section .filters_menu {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-auto-rows: min-content;
+        display: flex; /* Flex layout for horizontal scrolling */
+        overflow-x: auto; /* Enable horizontal scroll */
+        white-space: nowrap; /* Prevent items from wrapping */
         gap: 5px;
-        font-size: .9rem;
+        font-size: .9rem; /* Smaller font size */
+        padding-left: 12rem;
+
+        scrollbar-width: none; /* Hide scrollbar in Firefox */
     }
 
+    .food_section .filters_menu::-webkit-scrollbar {
+        display: none; /* Hide scrollbar in Chrome/Safari */
+    }
+
+    .food_section .filters_menu li {
+        display: inline-block; /* Keep items in a row */
+        padding: 5px 10px; /* Reduce padding for smaller screens */
+        font-size: .9rem;
+        white-space: nowrap; /* Prevent text wrapping */
+        flex-shrink: 0; /* Prevent items from shrinking */
+        min-width: 100px; /* Set a minimum width for list items */
+        text-align: center; /* Center the text in the item */
+    }
     .meal .card-title {
         width: 100%;
         font-size: 1rem;
@@ -347,14 +392,28 @@ main {
 @media (max-width: 600px) {
 
     .food_section .filters_menu {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-auto-rows: min-content;
+        display: flex; /* Flex layout for horizontal scrolling */
+        overflow-x: auto; /* Enable horizontal scroll */
+        white-space: nowrap; /* Prevent items from wrapping */
         gap: 5px;
-        font-size: .9rem;
-        align-items: center;
+        font-size: .9rem; /* Smaller font size */
+        padding-left: 12rem;
+        scrollbar-width: none; /* Hide scrollbar in Firefox */
     }
 
+    .food_section .filters_menu::-webkit-scrollbar {
+        display: none; /* Hide scrollbar in Chrome/Safari */
+    }
+
+    .food_section .filters_menu li {
+        display: inline-block; /* Keep items in a row */
+        padding: 5px 10px; /* Reduce padding for smaller screens */
+        font-size: .9rem;
+        white-space: nowrap; /* Prevent text wrapping */
+        flex-shrink: 0; /* Prevent items from shrinking */
+        min-width: 100px; /* Set a minimum width for list items */
+        text-align: center; /* Center the text in the item */
+    }
     .meal .card-title {
         width: 100%;
         font-size: 1rem;
@@ -563,7 +622,7 @@ footer {
     }
 
     .social-media {
-        display: flex;
+        /* display: flex; */
         justify-content: center;
         align-items: baseline;
         width: 100%;
