@@ -25,7 +25,7 @@
 /* Header Section */
 header {
     height: 88vh; /* Set to 80vh */
-    /* background-image: url('../../images/2.jpeg'); */
+    background-image: url('../../images/3.jpeg');
     background-size: cover;
     background-position: center;
     display: flex;
