@@ -32,7 +32,7 @@ $(document).ready(function() {
                     }
 
                     // Update the header content (restaurant name and subheading)
-                    $("#header").css("background-image", `url(${restData.bg_image || './images/4.jpeg'})`);
+                    $("#header").css("background-image", `url(${restData.bg_image || './images/3.jpeg'})`);
                     $("#header h1").text(restData.restaurant_name);
                     $("#header p").text(restData.subheading);
 
